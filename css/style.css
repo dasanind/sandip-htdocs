@@ -21,12 +21,12 @@ body {
 /*height: 100%;*/
 height: 100%;
 text-align: center;
-font: 1.3em Times;
-/*       "Times", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif; */
+/* font: 1.3em Times; */
+font: 1.3em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
 background-color: #ACCEF3;
 min-width: 980px;
 padding-bottom: 20px; /* Simulates margin-bottom for wrapper in IE */
-/* letter-spacing: 0.1em; */
+letter-spacing: 0.1em;
 }
 
 a:link, a:visited {
@@ -65,13 +65,13 @@ font-size: 1.4em;
 font-weight: bold;
 line-height: 0.9;
 color: #202020;
-font-family: sans-serif;
-/* "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Georgia, "Times New Roman", Times, serif; */
+/* font-family: sans-serif; */
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Georgia, "Times New Roman", Times, serif;
 }
 
 h1 {
-    font: 2.6em sans-serif;
-/* "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,Georgia, "Times New Roman", Times, serif; */
+/* font: 2.6em sans-serif; */
+font: 2.6em  "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,Georgia, "Times New Roman", Times, serif;
 margin: 0 0 10px 40px;
 border-bottom: 1px solid #4C8CA6;
 width: 55%;
@@ -85,8 +85,8 @@ color: #FFFFFF;
 }
 
 h2 {
-    font: 1.2em sans-serif;
-	   /* "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica,Verdana, Arial, Helvetica, Times; */
+/* font: 1.2em sans-serif; */
+font: 1.2em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica,Verdana, Arial, Helvetica, sans-serif;
 /* letter-spacing: 1px; */
 color: #FFFFFF;
 border-left: 3px solid #FFAE20;
@@ -96,8 +96,8 @@ margin: 12px 0 0 40px;
 
 h3 {
 color: #00598D;
-font: 1.5em sans-serif;
-       /* "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica, Georgia, "Times New Roman", Times, serif; */
+/* font: 1.5em sans-serif; */
+font: 1.5em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica, Georgia, "Times New Roman", Times, serif;
 /* letter-spacing: 1px; */
 /*background: url('../img/h3-bg.gif') no-repeat 0 50%;*/
 padding-left: 5px;
@@ -109,7 +109,7 @@ h4 {
 font-size: 1em;
 background-color: #005E85;
 color: #FFFFFF;
-/* letter-spacing: 1px; */
+letter-spacing: 1px;
 border: 2px solid #FFFFFF;
 margin-top: 7px;
 padding: 3px 10px;
@@ -128,15 +128,15 @@ color: #FFFFFF;
 h5 {
 color: #FFFFFF;
 font-size: 1em;
-/* letter-spacing: 1px; */
+letter-spacing: 1px;
 padding-left: 6px;
 margin: 18px 0 10px 0;
 }
 
 h6 {
 color: #FFFFFF;
-font: 1.4em sans-serif;
-       /* "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica, Georgia, "Times New Roman", Times, serif; */
+/* font: 1.4em sans-serif; */
+font: 1.4em "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica, Georgia, "Times New Roman", Times, serif;
 /*letter-spacing: 1px;*/
 padding-left: 26px;
 background: url('../img/h3-bg.gif') no-repeat 0 50%;
@@ -271,16 +271,16 @@ font-weight: bold;
 color: #B1EEFF;
 }
 
-.cleaning-box { 
+.cleaning-box {
 min-height: 1px;
 }
 
 .cleaning-box:after {
-display: block; 
-clear: both; 
-visibility: hidden; 
-height: 0; 
-font-size: 0; 
+display: block;
+clear: both;
+visibility: hidden;
+height: 0;
+font-size: 0;
 content: ' ';
 }
 
@@ -331,7 +331,7 @@ margin-bottom: 0.5em;
 
 }
 
-.content-box-left2 {
+.content-box-left {
 float: left;
 width: 730px;
 margin-top: 6px;
@@ -394,7 +394,7 @@ margin-top: 6px;
 background: #fff;
 border-radius: 5px;
 box-shadow: 3px 3px 5px 1px #888888;
-min-height: 560px;
+min-height: 160px;
 padding-bottom: 0.5em;
 margin-bottom: 0em;
 
@@ -414,6 +414,18 @@ text-align: left;
 width:100%;
 }
 
+.content-box-left4 {
+float: left;
+width: 100%;
+margin-top: 6px;
+background: #fff;
+border-radius: 5px;
+box-shadow: 3px 3px 5px 1px #888888;
+min-height: 560px;
+padding-bottom: 0.5em;
+margin-bottom: 0em;
+
+}
 
 .content-box-right {
 float: right;
@@ -422,7 +434,7 @@ float: right;
     background: #fff;
     box-shadow: 3px 3px 5px 1px #888888;
     border-radius: 5px;
-   
+
     padding-bottom: 2em;
     margin-bottom: 0em;
 	height: 100%;
@@ -471,7 +483,7 @@ margin-top: 18px;
 }
 
 .people{
-float:left;	
+float:left;
 }
 
 .google{
@@ -617,9 +629,8 @@ padding: 1em 1em;
 /*color: #fff;*/
 }
 
-#publication 
+#publication
 {
 font-size: 1.2em;
 line-height: 1.4;
 }
-
