@@ -1,0 +1,79 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{goguen82}
+J.~Goguen and J.~Meseguer, ``Security policies and security models,'' in
+  \emph{Proc. 1982 IEEE Symposium on Security and Privacy}, April 1982, pp.
+  11--20.
+
+\bibitem{symbolic}
+J.~Matthews, J.~S. Moore, S.~Ray, and D.~Vroon, ``{Verification Condition
+  Generation Via Theorem Proving},'' in \emph{{Proceedings of the $13$th
+  International Conference on Logic for Programming, Artificial Intelligence,
+  and Reasoning (LPAR 2006)}}, ser. LNCS, M.~Hermann and A.~Voronkov, Eds.,
+  vol. 4246, Nov. 2006, pp. 362--376.
+
+\bibitem{jar:defpun}
+P.~Manolios and J.~S. Moore, ``{Partial Functions in {ACL2}},'' \emph{{Journal
+  of Automated Reasoning}}, vol.~31, no.~2, pp. 107--127, 2003.
+
+\bibitem{sm}
+A.~Sabelfeld and A.~C. Myers, ``{Language-Based Information-Flow Security},''
+  \emph{{IEEE Journal on Selected Areas of Communication}}, vol.~21, no.~3,
+  Jan. 2003.
+
+\bibitem{tricky}
+T.~Amtoft and A.~Banerjee, ``{Verification Condition Generation for Conditional
+  Information Flow},'' in \emph{{Proceedings of the 2007 ACM workshop on Formal
+  methods in security engineering (FMSE 2007)}}, P.~Ning, V.~D.~G. V.~Atluri,
+  and H.~Mantel, Eds.\hskip 1em plus 0.5em minus 0.4em\relax {ACM Press}, Nov.
+  2007, pp. 2--11.
+
+\bibitem{denning}
+D.~Denning and P.~Denning, ``{Certification of Programs for Secure Information
+  Flow},'' \emph{{Communications of the ACM}}, vol.~20, no.~7, pp. 504--513,
+  1977.
+
+\bibitem{palsberg}
+P.~Orbaek and J.~Palsberg, ``{Trust in the $\lambda$-calculus},''
+  \emph{{Journal of Functional Programming}}, vol.~7, no.~6, pp. 557--591,
+  1997.
+
+\bibitem{volpano}
+D.~Volpano and G.~Smith, ``{A Type-Based Approach to Program Security},'' in
+  \emph{{Proceedings of Theory and Practice of Software Development (TAPSOFT
+  1997)}}, ser. LNCS.\hskip 1em plus 0.5em minus 0.4em\relax Springer-Verlag,
+  1997, pp. 607--621.
+
+\bibitem{clark}
+D.~Clark, C.~Hankin, and S.~Hunt, ``{Information Flow Analysis for Algol-like
+  Languages},'' \emph{{Computer Languages}}, vol.~28, no.~1, pp. 3--28, 2002.
+
+\bibitem{joshi}
+R.~Joshi and K.~R.~M. Leino, ``{A Semantic Approach to Information Flow},''
+  \emph{{Science of Computer Programming}}, vol.~37, pp. 113--138, 2000.
+
+\bibitem{darvas}
+A.~Darvas, R.~H{\"a}hnle, and D.~Sands, ``{A Theorem Proving Approach to
+  Analysis of Secure Information Flow},'' in \emph{{Proceedings of the $2$nd
+  International Conference Security in Pervasive Computing (SPC 2005)}}, ser.
+  LNCS.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2005, pp. 193--209.
+
+\end{thebibliography}

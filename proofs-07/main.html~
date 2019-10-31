@@ -1,0 +1,88 @@
+<html>
+<head>
+  <title>
+A Mechanical Analysis of Program Verification Strategies</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>
+A Mechanical Analysis of Program Verification Strategies
+</H1>
+
+<big><a href="http://www.cs.utexas.edu/~sandip">S. Ray</a>, <a
+href="http://www.cs.utexas.edu/~hunt">W. A. Hunt, Jr.</a>, <a
+href="http://web.cecs.pdx.edu/~jmatthew">J. Matthews</a>, and <a
+href="http://www.cs.utexas.edu/~moore">J S. Moore</a> </big>
+<br><br>
+
+<a href="http://www.springerlink.com/content/100280/">Journal of
+Automated Reasoning</a>, volume 40(4), May 2008, pages 245-269.  <a
+href="http://www.springer.com">Springer</a>.  <br><br>
+
+<small> &copy; 2008 <a
+href="http://www.springer.com">Springer</a>.  The original
+publication is available at <a
+href="http://www.springerlink.com">www.springerlink.com</a>.</small>
+
+<br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We analyze three proof strategies commonly used in deductive
+verification of deterministic sequential programs formalized with
+operational semantics.  The strategies are: (i) <span
+style="font-style: italic">stepwise invariants</span>, (ii) <span
+style="font-style: italic"> clock functions</span>, and (iii) <span
+style="font-style: italic">inductive assertions</span>.  We show how
+to formalize the strategies in the logic of the ACL2 theorem prover.
+Based on our formalization, we prove that each strategy is both <span
+style="font-style: italic">sound</span> and <span style="font-style:
+italic">complete</span>.  The completeness result implies that given
+any proof of correctness of a sequential program one can derive a
+proof in each of the above strategies.  The soundness and completeness
+theorems have been mechanically checked with ACL2.
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="proofs.ps">ps</a>, <a href="proofs.pdf">pdf</a>,
+ <a href="http://dx.doi.org/10.1007/s10817-008-9098-1">Online Version
+ from Springer<a>)</li>
+
+ <li><span style="font-weight:bold">Supporting ACL2 proof
+ scripts:</span> See the directory <code>books/proofstyles/</code> in
+ the current ACL2 distribution. </li>
+
+</ul>
+
+<br>
+
+<H2>BibTex</H2>
+
+<pre>
+@Article{ray-mechanical,
+  author    = "S. Ray and Hunt, Jr., W. A. and J. Matthews and J S. Moore",
+  title     = "{A Mechanical Analysis of Program Verification Strategies}",
+  journal   = "{Journal of Automated Reasoning}",
+  volume    = "40",
+  number    = "4",
+  pages     = "245-269",
+  publisher = "{Springer}",
+  month     = may,
+  year      = "2008"
+}
+</pre>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,64 @@
+<html>
+<head>
+  <title>Optimizing Equivalence Checking for Behavioral Synthesis</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Optimizing Equivalence Checking for Behavioral Synthesis</H1>
+
+<big>
+<a href="http://www.cs.pdx.edu/~kecheng">K. Hao</a>, <a
+href="http://www.cs.pdx.edu/~xie">F. Xie</a>, <a
+href="http://www.cs.utexas.edu/~sandip">S. Ray</a>, and J. Yang
+</big>
+<br><br>
+
+To Appear in <a href="http://www.date-conference.org">Design,
+Automation & Test in Europe (DATE 2010)</a>, Dresden, Germany, March
+2010.  <a href="http://www.ieee.org">IEEE</a>.
+
+<br><br> 
+
+<small> &copy; 2009 <a href="http://www.ieee.org">IEEE</a>.  Personal
+use of this material is permitted.  However, permission to
+reprint/republish this material for advertising or promotional
+purposes or for creating new collective works for resale or
+redistribution to servers or lists, or to reuse any copyrighted
+component of this work in other works must be obtained from the IEEE.
+</small>
+
+ <br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+Behavioral synthesis is the compilation of an Electronic system-level
+(ESL) design into an RTL implementation.  We present a suite of
+optimizations for equivalence checking of RTL generated through
+behavioral synthesis.  The optimizations exploit the high-level
+structure of the ESL description to ameliorate verification 
+complexity.  Experiments on representative benchmarks indicate that
+the optimizations can handle equivalence checking of synthesized
+designs with tens of thousands of lines of RTL.
+
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="ec4hls.ps">ps</a>, <a
+ href="ec4hls.pdf">pdf</a>)</li>
+
+</ul>
+
+
+<br>
+
+</body>
+</html>

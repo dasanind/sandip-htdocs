@@ -1,0 +1,50 @@
+<html>
+<head>
+  <title>Verification of A Concurrent Deque Implementation</title>
+  <meta name="author" content="Sandip Ray">
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+<H1>Verification of a Concurrent Deque Implementation</H1>
+
+<big>
+R. D. Blumofe, <a
+href="http://www.cs.utexas.edu/~plaxton">C. G. Plaxton</a>, and <a
+href="http://www.cs.utexas.edu/~sandip">S. Ray</a></big>
+
+<br><br>
+
+Technical Report TR-99-11, Department of Computer Sciences, University
+of Texas at Austin, June 1999.
+
+<br><br>
+
+<hr style="width: 100%; height: 2px;">
+
+
+<H2>Abstract</H2>
+
+We prove the correctness of the concurrent deque component of a recent
+implementation of the work-stealing algorithm. Specifically, we prove that this
+concurrent deque implementation is synchronizable. Synchronizability is a
+weaker condition than the more traditional notion of serializability.&nbsp; Our
+concurrent deque implementation is not serializable, but its synchronizability
+makes it sufficient for use in the work-stealing algorithm.&nbsp; Whereas
+serializability requires that concurrent method invocations appear as if they
+are executed atomically in some serial order, synchronizability allows some
+invocations to appear as if they are executed atomically at exactly the same
+time.
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="main.ps">ps</a>, <a href="main.pdf">pdf</a>)<br>
+ </li> </ul> 
+
+</body> 
+
+</html>

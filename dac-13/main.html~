@@ -1,0 +1,82 @@
+<html>
+
+<head>
+  <title>Equivalence Checking for Behaviorally Synthesized Pipelines
+</title>
+</head>
+
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Equivalence Checking for Behaviorally Synthesized Pipelines</H1>
+
+<big><a href="http://www.cs.pdx.edu/~kecheng">K. Hao</a>, <a href="http://www.cs.utexas.edu/~sandip">S. Ray</a>,
+and <a href="http://www.cs.pdx.edu/~xie">F. Xie</a> </big> <br><br>
+
+
+In P. Groeneveld,
+<a href="http://home.dei.polimi.it/sciuto/About%20Me.html">D. Sciuto</a>,
+and <a href="http://www.cs.tufts.edu/~soha">S. Hassoun</a>,
+editors, <a href="http://www.dac.com/dac+2012.aspx">49th International
+ACM/EDAC/IEEE Design Automation Conference (DAC 2012)</a>, San
+Francisco, CA, USA, June 2012, pages
+344-349.  <a href="http://www.acm.org">ACM</a>.
+
+<br><br> 
+
+<small> &copy; 2012 <a href="http://www.acm.org">ACM</a>, 2 Penn
+Plaza, Suite 701 New York, New York 10121.  Permission to make digital
+or hard copies of portions of this work for personal or classroom use
+is granted without fee provided that the copies are not made or
+distributed for profit or commercial advantage and that copies bear
+this notice and the full citation on the first page in print or the
+first screen in digital media. Copyrights for components of this work
+owned by others than ACM must be honored. Abstracting with credit is
+permitted.  To copy otherwise, to republish, to post on servers, or to
+redistribute to lists, requires prior specific permission and/or a
+fee. Send written requests for republication to ACM Publications,
+Copyright & Permissions at the address above or fax +1 (212) 869-0481
+or email permissions@acm.org.  For other copying of articles that
+carry a code at the bottom of the first or last page, copying is
+permitted provided that the per-copy fee indicated in the code is paid
+through the Copyright Clearance Center, 222 Rosewood Drive, Danvers,
+MA 01923.  </small>
+
+<br><br> 
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+Loop pipelining is a critical transformation in behavioral synthesis.
+It is crucial to producing hardware designs with acceptable latency
+and throughput.  However, it is a complex transformation involving
+aggressive scheduling strategies for high throughput and careful
+control generation to eliminate hazards.  We present an equivalence
+checking approach for certifying synthesized hardware designs in the
+presence of pipelining transformations.  Our approach works by (1)
+constructing a provably correct pipeline reference model from
+sequential specification, and (2) applying sequential equivalence
+checking between this reference model and synthesized RTL.  We
+demonstrate the scalability of our approach on several synthesized
+designs from a commercial synthesis tool.
+
+
+<H2>Relevant files</H2>
+
+<ul>
+ <li><a href="ec4bspd.pdf">Paper</a> </li>
+
+ </ul>
+
+<br>
+
+
+</body>
+</html>
+

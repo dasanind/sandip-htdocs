@@ -108,25 +108,15 @@ International Conference Proceeding Series, ISBN
 <h2>Dissertation</h2>
 
 <ul>
-<li> <span style="font-weight:bold;">S. Ray</span>.  <a href="dissertation/main.html">
-Using Theorem Proving and Algorithmic Decision Procedures
-for Large-Scale System Verification</a>, Ph.D
-Dissertation, <a href="http://www.cs.utexas.edu">Department
-of Computer
-Science</a>, <a href="http://www.utexas.edu">University of
-Texas at Austin</a>, December 2005.  </li></ul>
+<li> <span style="font-weight: bold;">S. Ray</span>.  <a
+href="dissertation/main.html"> Using Theorem Proving and Algorithmic
+Decision Procedures for Large-Scale System Verification</a>, Ph.D
+Dissertation, <a href="http://www.cs.utexas.edu">Department of
+Computer Science</a>, <a href="http://www.utexas.edu">University
+of Texas at Austin</a>, December 2005.  </li></ul>
 
 <h2>Journal Articles</h2>
 
-<ul><li><a name="csur-19"></a>H. Nejatollahi,
-  <a href="https://www.ics.uci.edu/~dutt">N. Dutt</a>, <b>S. Ray</b>,
-  <a href="http://people.alari.ch/regaz/index.html">F. Regazzoni</a>, I. Banerjee, and
-  R. Cammarota.  <span style="color:red;"><u>Post-quantum
-  Lattice-based Cryptography Implementations: A
-  Survey</u></span>.  <a href="https://csur.acm.org/">ACM
-  Computing Surveys</a> volume 51(6), pages 129:1--129:41.
-  ACM.</li></ul>
-	
 <ul><li><a name="hass-18"></a>K. Chen, S. Zhang, Z. Li,
   Y. Zhang, Q. Deng, <b>S. Ray</b>,
   and <a href="http://jin.ece.ufl.edu">Y. Jin</a>.  
@@ -328,19 +318,10 @@ href="#invariants-tr">2005 Technical Report</a> below.)  </li></ul>
 
 <h2>Publications in Conferences/Symposia</h2>
 
-<ul><li>Y. Cao, <a href="http://www.csee.usf.edu/~haozheng">H. Zheng</a>,
-and <b>S. Ray</b>.
-   <span style="color: red;"><u>Communication-Centric
-  Observability Selection for Post-silicon System-on-Chip
-  Integration Debug</u></span>.
-  In <a href="http://www.isqed.org/">20th International
-  Symposium on Quality Electronic Design (ISQED 2019)</a>,
-  Santa Clara, CA, USA, March 2019.</li></ul>
-
 <ul><li><a name="icce-19"></a> <span style="font-weight:bold;">S. Ray</span>.  <span style="color:
   red;"><u>Safety, Security, and Reliability: The Automotive
   Robustness Problem and an Architectural
-  Solution</u></span>.  
+  Solution</u></span>.  To Appear
   In <a href="http://anirban-sengupta.com">A. Sengupta</a>
   and <a href="http://people.rit.edu/~dxkeec/">D. Kudithipudi</a>
   editors, <a href="http://www.icce.org/">37th IEEE

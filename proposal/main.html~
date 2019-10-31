@@ -1,0 +1,61 @@
+<html>
+<head>
+  <title>Ph.D. Oral Proposal</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Using Theorem Proving with Algorithmic Techniques for Large-scale System Verification</H1>
+
+<big>
+<a href="http://www.cs.utexas.edu/users/sandip">S. Ray</a>
+</big>
+
+<br><br>
+
+Ph.D. Oral Proposal, Department of Computer Sciences, University of Texas at
+Austin, November 2003.
+
+<br><br>
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We propose to write a thesis on using theorem proving with algorithmic
+techniques for verification of large scale computer systems. Large-scale
+computer systems tend to have a non-terminating computation, and reasoning
+about such systems involves exhibiting some temporal property of the
+system. For large system models, automatic verification of non-trivial temporal
+properties is often infeasible, because of the state explosion problem. Theorem
+proving has a better potential to scale up to large designs, but it often
+requires considerable user assistance to guide the proof. We consider an
+intermediate approach, using theorem proving to verify correspondence between
+executions of a concrete system design and its abstraction, and then using
+automated analysis to verify the temporal properties of abstractions. We
+explore the logical issues and problems involved in the use of automated
+analysis on abstractions verified by a theorem prover. We propose to implement
+tools and techniques that provide a reasonable amount of automation in the
+verification process. Further, we plan to demonstrate our techniques on
+verification of multiprocessor system models, and specifically focus on
+synchronization protocols, cache coherence, and pipelined architecture of
+realistic systems. We use ACL2 (a programming language, logic, and theorem
+prover) to illustrate our techniques.
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="proposal.ps">ps</a>, <a
+ href="proposal.pdf">pdf</a>)</li>
+
+  <li>Slides for Proposal Talk (<a href="slide.ps">ps</a>, <a
+ href="slide.pdf">pdf</a>)</li> 
+
+</ul> 
+</body> 
+</html>
+

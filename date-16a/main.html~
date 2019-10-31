@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <title>Equivalence Checking for Behaviorally Synthesized Pipelines
+</title>
+</head>
+
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Equivalence Checking for Behaviorally Synthesized Pipelines</H1>
+
+
+<big><a href="http://www.cs.pdx.edu/~zhenkun">Z. Yang</a>,
+<a href="http://www.cs.pdx.edu/~kecheng">K. Hao</a>, 
+ <a href="http://www.cs.pdx.edu/~congkai">K. Cong</a>, 
+ <a href="http://www.cs.pdx.edu/~leil">L. Lei</a>,
+ <a href= "http://www.cs.utexas.edu/~sandip">S. Ray</a>,
+and
+<a href="http://www.cs.pdx.edu/~xie">F. Xie</a> </big> <br><br>
+
+In <a href="http://www.date-conference.org">Design,
+Automation & Test in Europe (DATE 2016)</a>, Dresden,
+Germany, March
+2016, pages 1652-1657.  <a href="http://www.ieee.org">IEEE</a>.
+
+<br><br> 
+
+<small> &copy; 2016 <a href="http://www.ieee.org">IEEE</a>.  Personal
+use of this material is permitted.  However, permission to
+reprint/republish this material for advertising or promotional
+purposes or for creating new collective works for resale or
+redistribution to servers or lists, or to reuse any copyrighted
+component of this work in other works must be obtained from the IEEE.
+</small>
+
+<br><br> 
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+Behavioral synthesis automatically compiles an electronic
+system-level description of a hardware design into an RTL
+implementation.  Scheduling in behavioral synthesis is an
+important, sophisticated, and error-prone transformation
+which converts the untimed or partially timed description
+into a fully timed implementation.  We present a scalable
+equivalence checking algorithm for validating scheduling
+transformations.  Our approach accounts for control/data
+dependency, scheduling modes, and subtle interface
+protocols.  We successfully validated designs with tens of
+thousands of lines of RTL synthesized by commercial
+synthesis tool, demonstrating the viability of our approach.
+
+<H2>Relevant files</H2>
+
+<ul>
+ <li><a href="master.pdf">Paper</a> </li>
+
+ </ul>
+
+<br>
+
+
+</body>
+</html>
+

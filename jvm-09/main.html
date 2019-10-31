@@ -1,0 +1,86 @@
+<html>
+<head>
+  <title>Verifying Java Programs through a Formal JVM Model</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Verifying Java Programs through a Formal JVM Model</H1>
+
+<big>
+<a href="http://www.cs.utexas.edu/~sandip">S. Ray</a> </big> <br><br>
+
+To Appear in F. Columbus, editor, <I>Java Software</I>, 2009.  <a
+href="http://www.novapublishers.com">Nova Publishers</a>.
+
+<!-- <br><br> -->
+
+<!-- <small> &copy; 2008 <a href="http://www.ieee.org">IEEE</a>.  Personal use of this -->
+<!-- material is permitted.  However, permission to reprint/republish this material -->
+<!-- for advertising or promotional purposes or for creating new collective works -->
+<!-- for resale or redistribution to servers or lists, or to reuse any copyrighted -->
+<!-- component of this work in other works must be obtained from the IEEE.  </small> -->
+
+<br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+With the pervasive use of Java in critical applications, it is
+becoming crucial to provide means to verify that a Java program
+conforms to its specifications.  We discuss an approach to formally
+verify Java programs.  The approach entails developing a formal
+semantics of the Java Virtual Machine (JVM), through a deep embedding
+in a formal logic.  We present a series of increasingly elaborate JVM
+models, starting from a simple abstraction and leading up to a fairly
+accurate model that can run Java test suites.  Deep embedding of the
+JVM permits the expression and proof both of code running on the JVM,
+and properties of the JVM itself.  We discuss the use of the models to
+explore a variety of Java issues from a formal perspective, including
+bounded arithmetic, object manipulation via the heap, synchronization
+via monitors, and properties of the bytecode verifier.
+
+<p>
+
+The formalization of the JVM, rather than a high-level semantics of
+Java, provides an appealing approach to the verification of Java
+software for two reasons.  First, modeling machines at the
+instruction-set architecture (ISA) level can generally be done with
+more confidence than modeling modern programming languages. This
+confidence stems in part from the simplicity of the ISA in comparison
+to a feature-rich high-level language such as Java, and in part from
+the precision and completeness of the informal ISA specifications
+provided by the manufacturers.  The second reason is that the
+practitioner need not assume (or verify) the correctness of the
+compiler, since the code verified is the code executed.
+
+<p>
+
+One drawback of the approach is that the resulting code proofs may be
+complicated by details arising from the translation to the JVM.
+Fortunately, the JVM is a well-designed abstract ISA for Java and
+introduces few such details.  We present several proof techniques to
+facilitate JVM code proofs.  One proof technique is the "cutpoint
+method", which enables the use of traditional inductive assertions
+directly on code proofs without an extra-logical verification
+condition generator.  We consider several applications of Java program
+verification using the JVM.
+
+<p>
+
+The JVM models, proof techniques, and application programs that we
+discuss here have been formalized with the ACL2 Theorem Prover.  We use
+ACL2 for the underlying logical foundation to investigate program
+verification.  However, the use of ACL2 is incidental: ACL2 can be
+replaced by any theorem prover for a mechanized logic with the
+provision for recursive function definition and (for certain proof
+techniques) first-order quantification and Skolemization.
+
+</body>
+</html>

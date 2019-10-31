@@ -1,0 +1,71 @@
+<html>
+<head>
+  <title>
+Protocol-Guided Analysis of System-level
+Post-silicon Traces Under Limited Observability
+</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Protocol-Guided Analysis of System-level
+Post-silicon Traces Under Limited Observability</H1>
+
+<big>
+<a href="http://http://www.csee.usf.edu/~zheng">H. Zheng</a>,
+Y. Cao,
+<a href="http://www.cs.utexas.edu/~sandip">S. Ray</a>, and J. Yang
+</big>
+<br><br>
+
+In P. Wright,
+<a href="http://www2.ece.gatech.edu/research/labs/GREEN/index_files/faculty.htm">S.
+Mukhopadhyay</a>, and B. Cline
+editors, <a href="http://www.isqed.org/">17th International
+Symposium on Quality Electronic Design (ISQED 2016)</a>,
+Santa Clara, CA, USA, March
+2016.  <a href="http://www.ieee.org">IEEE</a>.
+
+<br><br> 
+
+<small> &copy; 2016 IEEE. Personal use of this material is
+permitted. However, permission to reprint/republish this
+material for advertising or promotional purposes or for
+creating new collective works for resale or redistribution
+to servers or lists, or to reuse any copyrighted component
+of this work in other works must be obtained from the
+IEEE.  </small>
+</small> <br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We consider the problem of reconstructing system-level
+behavior of an SoC design from a partially observed signal
+trace.  Solving this problem is a critical activity in
+post-silicon validation, and currently depends primarily on
+human creativity and insights.  In this paper, we provide an
+algorithm to automatically infer system-level transactions
+from incomplete, ambiguous, and noisy trace data.  We
+demonstrate the approach on a multicore virtual platoform
+developed within the GEM5 environment.
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="main.pdf">pdf</a>)</li>
+
+</ul>
+
+
+<br>
+
+
+</body>
+</html>

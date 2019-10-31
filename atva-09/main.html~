@@ -1,0 +1,84 @@
+<html>
+<head>
+  <title>Formal Verification for High-Assurance Behavioral Synthesis</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Formal Verification for High-Assurance Behavioral Synthesis</H1>
+
+<big>
+<a href="http://www.cs.utexas.edu/~sandip">S. Ray</a>, <a
+href="http://www.cs.pdx.edu/~kecheng">K. Hao</a>, <a
+href="http://www.cs.pdx.edu/~chenyan">Y. Chen</a>, <a
+href="http://www.cs.pdx.edu/~xie">F. Xie</a>, and J. Yang.
+</big>
+
+In <a href="http://www.iist.unu.edu/~lzm">Z. Liu</a> and <a
+href="http://www.cs.aau.dk/~apr">A. P. Ravn</a>, editors, Proceedings
+of the <a href="http://www.iist.unu.edu/atva09">7th International
+Symposium on Automated Technology for Verification and Analysis (ATVA
+2009)</a>, Macao SAR, China, October 2009, volume 5799 of <a
+href="http://www.springer.de/comp/lncs/index.html">LNCS</a>, pages
+337-351.  <a href="http://www.springer.com">Springer</a>.
+
+<br><br> <small> &copy; <a
+href="http://www.springer.de/comp/lncs/index.html">Springer-Verlag</a>
+Berlin Heidelberg 2009.</small> <br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We present a framework for certifying hardware designs generated
+through behavioral synthesis, by using formal verification to certify
+the associated synthesis transformations.  We show how to decompose
+this certification into two components, which can be respectively
+handled by the complementary verification techniques, theorem proving
+and model checking.  The approach produces a certified reference flow,
+composed of transformations distilled from production synthesis tools
+but represented as transformations on graphs with an associated formal
+semantics.  This tool-independent abstraction disentangles our
+framework from the inner workings of specific synthesis tools while
+permitting certification of hardware designs generated from a broad
+class of behavioral descriptions.  We provide experimental results
+suggesting the scalability on practical designs.
+
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="hls.ps">ps</a>, <a
+ href="hls.pdf">pdf</a>)</li>
+
+</ul>
+
+
+<br>
+
+<h2>BibTex</h2>
+
+<pre>
+@Inproceedings{ray-formal,
+  author    = "S. Ray and K. Hao and F. Xie and J. Yang",
+  title     = "{Formal Verification for High-Assurance Behavioral Synthesis}",
+  booktitle = "{Proceedings of the 7th International Symposium on Automated 
+                Technology for Verification and Analysis (ATVA 2009)}",
+  editor    = "Z. Liu and A. P. Ravn",
+  address   = "{Macao SAR, China}",
+  month     = oct,
+  year      = "2009",
+  series    = "LNCS",
+  volume    = "5799",
+  pages     = "337-351",
+  publisher = "Springer"
+}
+</pre>
+
+</body>
+</html>

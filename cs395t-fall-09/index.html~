@@ -1,0 +1,112 @@
+<html>
+<head>
+  <title>CS395T Industrial Formal Methods</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="#FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+<center>
+<H1>CS395T Industrial Formal Methods<br>
+Fall 2009 </h1>
+</center>
+
+
+<h2>Class Information</h2>
+<ul>
+<li><b>Unique Number:</b> 55009 <br></li>
+<li><b>Location:</b> ACES 5.336<br></li>
+<li><b>Meets:</b> Tuesdays 4:00-7:00pm<br></li>
+<li><b>Instructors:</b> <a href="http://www.cs.utexas.edu/~hunt">Warren A. Hunt, Jr.</a> and <a href="http://www.cs.utexas.edu/~sandip">Sandip Ray</a></li>
+<li><b>Office:</b> MAI 2014 (Hunt),  MAI 2004 (Ray)</li>
+<li><b>Hunt Office Hours:</b> </li>
+<li><b>Ray Office Hours:</b> By Appointnent
+<li><b>Class Home page:</b> <a
+href="http://www.cs.utexas.edu/~sandip/classes/cs395t-fall-09/index.html">http://www.cs.utexas.edu/~sandip/classes/cs395t-fall-09/</a> 
+</li>
+</ul>
+
+<h2>Course Outline</h2>
+
+This course is about industrial application of formal verification.
+Formal verification is the use of mathematical methods to ensure that
+computing systems behave safely and securely.  Formal verification now
+a crucial component of the validation tool flow for many system design
+components, such as circuit designs, communication and security
+protocols, device drivers, etc.  In this course we will learn
+verification problems facing the industry today, the current tools and
+techniques available to address them, and the strengths and weaknesses
+of those techniques.  The course will focus on research challenges in
+developing robust, scalable formal verification techniques.
+
+<h2>Textbook</h2>
+
+There is no textbook.  We will point to papers pertaining to various
+topics discussed in the class.  Handouts may be distributed for some
+of the materials.
+
+<H2>Grading</H2>
+
+The grades will be based on:
+<ul>
+<li> Class Participation (20%)</li>
+<li> Paper Presentation (20%) </li>
+<li> In-class Final (20%)</li>
+<li> Project (40%)</li>
+</ul>
+
+<H2>Class Participation</H2>
+
+This is a seminar course.  You are expected to participate actively in
+the class discussion.  We will keep a record of your class responses.  
+
+<H2>Homeworks</H2>
+
+Sometimes problem sets will be assigned as homeworks.  The homeworks
+will not be graded; instead, we will discuss the homework in class on
+the day it is due.  Your comments and responses during the discussion
+will count towards your class participation grade.
+
+<H2>Paper Presentation</H2>
+
+Students will present papers (both classic and recent) discussing
+different verification techniques and application domains.  Student
+presentations will be limited to one hour.  We will provide a list of
+papers based on the different topics of interest.  You are free to
+choose your own papers, but if you do, please talk to the instructors
+before-hand.  When someone presents a paper, the others are expected
+to ask questions and provide comments if something is unclear.  At the
+class after the presentation, each student other than the presenter is
+expected to submit a short summary containing both a review of the
+material presented and a critique of the presentation itself.  Your
+presentation grades will be based on quality of your own presentation,
+as well as the quality of your remarks and review.
+
+<H2>Project</H2>
+
+We will discuss different project topics as the semester progresses.
+If there is some topic that you want to pursue, please come and talk
+to the instructors about it.  Projects may be done individually or in
+groups.  More detailed guidelines on projects will be given later.
+
+<h2>Class Schedule</h2>
+
+A tentative schedule is available <a href="schedule.html">here</a>.
+The schedule may be adjusted to suite the interest of the class.
+
+<h2>Scholastic Dishonesty</h2>
+
+All submitted work (in reports and tests) must be your own, with the
+exception of group work in projects and any other collaboration
+explicitly permitted by the instructors.  Scholastic dishonesty will
+not be tolerated and will be referred to the Dean of Students Office.
+Click <A HREF="http://www.cs.utexas.edu/academics/conduct">here</a>
+for a summary of expectations from a CS student.  If you are unsure
+whether some act will constitute scholastic dishonesty please feel
+free to contact the instructors or University officials for
+clarification.
+
+</body>
+</html>

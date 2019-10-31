@@ -1,0 +1,94 @@
+<html>
+<head>
+  <title>Mechanized Certification of Secure Hardware Designs</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Mechanized Certification of Secure Hardware Designs</H1>
+
+<big>
+<a href="http://www.cs.utexas.edu/~sandip">S. Ray</a> and <a
+href="http://www.cs.utexas.edu/~hunt">W. A. Hunt,
+Jr.</a></big> <br><br>
+
+In M. S. Abadir, <a
+href="http://mtv.ece.ucsb.edu/licwang/">L. Wang</a>, and <a
+href="http://www.cerc.utexas.edu/~jay">J. Bhadra</a>, editors,
+Proceedings of the <a
+href="http://mtv.ece.ucsb.edu/MTV/mtv2007-final.html">8th
+International Workshop on Microprocessor Test and Verification, Common
+Challenges and Solutions (MTV 2007)</a>, Austin, TX, December 2007,
+pages 25-32.  <a
+href="http://www.computer.org/portal/site/ieeecs">IEEE Computer
+Society</a>
+
+<br><br> 
+
+<small> &copy; 2008 <a href="http://www.ieee.org">IEEE</a>.  Personal use of this
+material is permitted.  However, permission to reprint/republish this material
+for advertising or promotional purposes or for creating new collective works
+for resale or redistribution to servers or lists, or to reuse any copyrighted
+component of this work in other works must be obtained from the IEEE.  </small>
+
+<br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We develop a framework for mechanized certification of secure hardware
+systems built out of commercial off-the-shelf (COTS) components
+purchased from untrusted vendors.  Certification requires a guarantee
+that the fabricated system satisfies the requisite safety and security
+properties.  Our framework facilitates this by (1) providing an
+unambiguous description of the requirements specification in a formal,
+computational logic, (2) a formalized hardware description language
+(HDL) to describe the implementation, and (3) mechanical tools and
+techniques for providing a certification of correctness and security.
+We illustrate the use of the framework in certifying the correctness
+and security properties of the netlist implementation of a voting
+machine using the ACL2 theorem prover.
+
+
+<H2>Relevant files</H2>
+
+
+<ul>
+  <li>Extended Abstract (<a href="voting-abstract.ps">ps</a>, <a
+ href="voting-abstract.pdf">pdf</a>)</li>
+
+  <li>Paper for Informal Proceedings (<a href="voting-informal.ps">ps</a>, <a
+ href="voting-informal.pdf">pdf</a>)</li>
+
+  <li>Paper Preprint for formal IEEE Proceedings (<a href="voting-formal.ps">ps</a>, <a
+ href="voting-formal.pdf">pdf</a>)</li>
+
+</ul>
+
+<br>
+<h2>BibTex</h2>
+
+<pre>
+@Inproceedings{ray-certification,
+  author    = "S. Ray and Hunt, Jr., W. A.",
+  title     = "{Mechanized Certification of Secure Hardware Designs}",
+  booktitle = "{Proceedings of the 8th International Workshop on Microprocessor Test and Verification, 
+                Common Challenges and Solutions (MTV 2007)}",
+  editor    = "M. S. Abadir and L. Wang and J. Bhadra",
+  address   = "{Austin, TX}",
+  month     = dec,
+  year      = "2007",
+  pages     = "25-32",
+  publisher = "IEEE Computer Society"
+}
+</pre>
+
+
+</body>
+</html>

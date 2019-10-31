@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <title>Exploiting Design-for-Debug for Flexible SoC
+Security Architecture</title>
+</head>
+
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Exploiting Design-for-Debug for Flexible SoC Security
+Architecture</H1>
+
+<big>
+A. Basak,
+<a href="http://swarup.ece.ufl.edu">S. Bhunia</a>,
+and <a href="http://www.cs.utexas.edu/~sandip">S. Ray</a>
+</big> <br><br>
+
+In C. Alpert,
+M. McNamara, <a href="http://www3.nd.edu/~shu">X. S. Hu</a>,
+<a href="http://www.cad4x.kaist.ac.kr/professor">N. Chang</a>,
+and <a href="http://web.eecs.umich.edu/~valeria">V. Bertacco</a>
+editors, <a href="http://dac.com">53rd International
+ACM/EDAC/IEEE Design Automation Conference (DAC 2016)</a>,
+Austin, TX, USA, June 2016, pages
+167:1-167:6.  <a href="http://www.acm.org">ACM</a>.
+<br><br> 
+
+<small> &copy; 2016 <a href="http://www.acm.org">ACM</a>, 2 Penn
+Plaza, Suite 701 New York, New York 10121.  Permission to make digital
+or hard copies of portions of this work for personal or classroom use
+is granted without fee provided that the copies are not made or
+distributed for profit or commercial advantage and that copies bear
+this notice and the full citation on the first page in print or the
+first screen in digital media. Copyrights for components of this work
+owned by others than ACM must be honored. Abstracting with credit is
+permitted.  To copy otherwise, to republish, to post on servers, or to
+redistribute to lists, requires prior specific permission and/or a
+fee. Send written requests for republication to ACM Publications,
+Copyright & Permissions at the address above or fax +1 (212) 869-0481
+or email permissions@acm.org.  For other copying of articles that
+carry a code at the bottom of the first or last page, copying is
+permitted provided that the per-copy fee indicated in the code is paid
+through the Copyright Clearance Center, 222 Rosewood Drive, Danvers,
+MA 01923.  </small>
+
+<br><br> 
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+Systematic implementation of System-on-Chip (SoC) security
+policies typically involves smart wrappers extracting local
+security critical events of interest from Intellectual
+Property (IP) blocks, together with a control engine that
+communicates with the wrappers to analyze the events for
+policy adherence.  However, developing customized wrappers
+at each IP for security requirements may incur significant
+overhead in area and hardware resources.  In this paper, we
+address this problem by exploiting the extensive
+design-for-debug (DfD) instrumentation already available
+on-chip.  In addition to reduction in the overall hardware
+overhead, the approach also adds flexibility to the security
+architecture itself, <i>e.g.</i>, permitting use of
+on-field DfD instrumentation, survivability and control
+hooks to patch security policy implementation in response to
+bugs and attacks found at post-silicon or changing security
+requirements on-field.  We show how to design scalable
+interface between security and debug architectures that
+provides the benefits of flexibility to security policy
+implementation without interfering with existing debug and
+survivability use cases and at minimal additional cost in
+energy and design complexity.
+
+<H2>Relevant files</H2>
+
+<ul>
+ <li><a href="dac16.pdf">Paper</a> </li>
+
+ </ul>
+
+<br>
+
+</body>
+</html>
+

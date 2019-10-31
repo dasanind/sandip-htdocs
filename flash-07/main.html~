@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <title>A Mechanized Refinement Framework for Analysis of Custom
+Memories</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>A Mechanized Refinement Framework for Analysis of Custom
+Memories</H1>
+
+<big><a href="http://www.cs.utexas.edu/~sandip">S. Ray</a> and <a
+href="http://www.cerc.utexas.edu/~jay">J. Bhadra</a> </big> <br><br>
+
+
+In J. Baumgartner and <a
+href="http://www.cs.chalmers.se/~ms/">M. Sheeran</a>, editors,
+Proceedings of the <a href="http://www.fmcad.org/2007">7th
+International Conference on Formal Methods in Computer-aided Design
+(FMCAD 2007)</a>, Austin, TX, November 2007, pages 239-242. <a
+href="http://www.computer.org/portal/site/ieeecs">IEEE Computer
+Society</a>
+
+<br><br> 
+
+<small> &copy; 2007 <a href="http://www.ieee.org">IEEE</a>.  Personal use of this
+material is permitted.  However, permission to reprint/republish this material
+for advertising or promotional purposes or for creating new collective works
+for resale or redistribution to servers or lists, or to reuse any copyrighted
+component of this work in other works must be obtained from the IEEE.  </small>
+
+
+<br><br>
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We present a framework for formal verification of embedded custom memories.
+Memory verification is complicated by the difficulty in abstracting design
+parameters induced by the inherently analog nature of transistor-level designs.
+We develop behavioral formal models that specify a memory as a system of
+interacting state machines, and relate such models with an abstract read/write
+view of the memory via refinements.  The operating constraints on the
+individual state machines can be validated by readily available data from
+analog simulations.  The framework handles both static RAM (SRAM) and flash
+memories, and we show initial results demonstrating its applicability.
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="flash.ps">ps</a>, <a
+ href="flash.pdf">pdf</a>)</li> 
+
+  <li>Slides for FMCAD 2007 (<a
+ href="flash-presentation.pdf">pdf</a>)</li>
+
+ </ul>
+
+<br>
+
+<h2>BibTex</h2>
+
+<pre>
+@Inproceedings{ray-mechanized,
+  author    = "S. Ray and J. Bhadra",
+  title     = "{A Mechanized Refinement Framework for Analysis of Custom Memories}",
+  editor    = "J. Baumgartner and M. Sheeran",
+  booktitle = "{Proceedings of the $7$th International Conference on 
+                Formal Methods in Computer-Aided Design (FMCAD 2007)}",
+  address   = "{Austin, TX}",
+  month     = nov,
+  pages     = "239-242",
+  year      = 2007,
+  publisher = "IEEE Computer Society"
+}
+</pre>
+
+
+</body>
+</html>
+

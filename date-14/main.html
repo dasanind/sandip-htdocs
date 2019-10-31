@@ -1,0 +1,75 @@
+<html>
+<head>
+  <title>Equivalence Checking for Function Pipelining in
+Behavioral Synthesis</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Equivalence Checking for Function Pipelining in
+Behavioral Synthesis</H1>
+
+<big>
+<a href="http://www.cs.pdx.edu/~kecheng">K. Hao</a>, <a
+href="http://www.cs.pdx.edu/~xie">F. Xie</a>, and <a
+href="http://www.cs.utexas.edu/~sandip">S. Ray</a>
+</big>
+<br><br>
+
+In <a href="http://www.date-conference.org">Design, Automation & Test
+in Europe (DATE 2010)</a>, Dresden, Germany, March 2014.  <a
+href="http://www.ieee.org">IEEE</a>.
+
+<br><br> 
+
+<small> &copy; 2014 <a href="http://www.ieee.org">IEEE</a>.  Personal
+use of this material is permitted.  However, permission to
+reprint/republish this material for advertising or promotional
+purposes or for creating new collective works for resale or
+redistribution to servers or lists, or to reuse any copyrighted
+component of this work in other works must be obtained from the IEEE.
+</small>
+
+ <br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+Function pipelining is a key transformation in behavioral
+synthesis.  However, synthesizing the complex pipeline logic
+is an error-prone process.  Sequential equivalence checking
+(SEC) support is highly desired to provide confidence in the
+correctness of synthesized pipelines.  However, SEC for
+function pipelining is challenging due to the significant
+difference between the behavioral specification and
+synthesized RTL.  Furthermore, function pipelines include
+hardware logic for dynamically inserting ``bubbles''
+(pipeline stalls), which bring additional difficulties in
+equivalence checking.  We develop an SEC framework for
+behaviorally synthesized function pipelines by (1) building
+a reference pipeline model with a certified function
+pipelining transformation, which faithfully captures bubble
+insertion; and (2) checking the equivalence between the
+reference model and synthesized RTL.  We demonstrate the
+scalability of our approach on industry-strength designs
+synthesized by a commercial tool.
+
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="func_pipeline.pdf">pdf</a>)</li>
+
+</ul>
+
+
+<br>
+
+</body>
+</html>

@@ -1,0 +1,278 @@
+<p><span style="font-size: 14pt;"><strong>Computer Architecture</strong></span></p>
+<p><span style="font-size: 12pt;">EEL 5764 </span><br /><span style="font-size: 12pt;">Meeting Time: MWF, 1:55pm &ndash; 2:45pm</span><br /><span style="font-size: 12pt;">Location: NEB 0100 </span><br /><span style="font-size: 12pt;">Academic Term: Fall 2018</span><br />
+<span style="font-size: 12pt;">Class Canvas Page (with valid GatorLink account): Click <a href="https://ufl.instructure.com/courses/354482">here</a></span></p>
+<p><strong><em>Instructor</em></strong><strong><em>:</em></strong></p>
+<ul>
+<li><strong> Name:</strong> Sandip Ray</li>
+<li>Email Address: <span><a href="mailto:sandip@ece.ufl.edu">sandip@ece.ufl.edu</a></span></li>
+<li>Office Phone Number: (352) 392-1605</li>
+<li>Office Hours: Wed, 3:30-5:00pm (or by appointment), BEN 323</li>
+</ul>
+<p><strong><em>Teaching Assistant</em></strong><strong><em>:</em></strong>&nbsp;</p>
+<ul>
+<li><strong>Name: </strong>Karthikeyan Rajasekaran</li>
+<li><strong>Email Address:</strong> <a href="mailto:krajasekaran@ufl.edu"><span>krajasekaran@ufl.edu</span></a></li>
+<li><strong>Office Hours:&nbsp;</strong>Tuesday, 12PM - 1.30 PM, NEB 288</li>
+<li>Please contact through Canvas Website</li>
+</ul>
+<p><strong><em>Course Description</em></strong></p>
+<p>This course covers principles of modern computer architecture, and quantitative analysis approaches to design tradeoffs in terms of cost, performance, and power/energy efficiency, etc. The topics covered include, but are not limited to, core architecture, multicore design, memory hierarchy, cache memory optimization, and data parallelism.</p>
+<p><strong><em>Course Pre-Requisites / Co-Requisites</em></strong></p>
+<p>Student are expected to have background in computer organization and design, digital design, and microprocessors. Additionally, students must have basic experience in a programming language such as C/C++, debugging, Linux operating system, and shell scripting.</p>
+<p><strong><em>Course Objectives</em></strong></p>
+<p>Upon completion of the course, students should have a good understanding of the following core components of computing system design:</p>
+<ul>
+<li>Technology impacts on architectures.</li>
+<li>Various aspects of modern computer architecture designs &minus; memory hierarchy, instruction set design, pipelining, out-of-order execution, speculation, etc.</li>
+<li>Various parallelisms and their exploitations, e.g., instruction-level, thread-level, and data-level parallelism.</li>
+<li>Quantitative evaluation of design tradeoffs in terms of different parameters.</li>
+</ul>
+<p>Students will also gain understanding of the interplays between architecture design and software, and how they can impact each other.</p>
+<p><strong><em>Required Textbook </em></strong></p>
+<ul>
+<li>Title: Computer Architecture: A Quantitative Approach, 5<sup>th</sup> Edition</li>
+<li>Author: John L. Hennessy and David A. Patterson</li>
+<li>Publisher: Morgan-Kaufman</li>
+<li>ISBN number: 012383872X</li>
+</ul>
+<p><strong><em>&nbsp;</em></strong></p>
+<p><strong><em>Course Contents </em></strong><strong>(Tentative)</strong></p>
+<ul>
+<li>Introduction and Overview (Ch. 1)</li>
+<li>Memory Hierarchy Design (Ch. 2, App. B)</li>
+<li>Instruction Set Principles (App. A)</li>
+<li>Instruction Level Parallelism and Pipelining (Ch. 3, App. C)</li>
+<li>Data Level Parallelism and Vector Processing (Ch. 4, App. G)</li>
+<li>Thread Level Parallelism and Multiprocessors (Ch. 5)</li>
+<li>Interconnection Networks (App. F)</li>
+</ul>
+<p><strong><em>Attendance Policy, Class Expectations, and Make-Up Policy</em></strong></p>
+<ul>
+<li>Attendance is required, but not monitored. Students are responsible for being up-to-date with all information communicated in class.</li>
+<li>The class is interactive. Feel free to interrupt and ask relevant questions.&nbsp;&nbsp; However, questions not directly related to the topic under discussion or requiring elaborate answers may be relegated to office hours.</li>
+<li>Cell phones may not be used as calculators. Cell phones must be turned off at all times including exams and lectures.</li>
+<li>The communication functions including text messaging on all devices must be turned off during exams.</li>
+<li>Students are not allowed to sell or distribute notes provided for this class.</li>
+<li>Excused absences are consistent with university policies in the graduate catalog (<span><a href="http://gradcatalog.ufl.edu/content.php?catoid=11&amp;navoid=2486#attendance">http://gradcatalog.ufl.edu/content.php?catoid=11&amp;navoid=2486#attendance</a></span>) and require appropriate documentation.</li>
+<li>Students who anticipate the necessity of being absent from class due to the observation of a major religious observance must provide notice of the date(s) in writing by the second meeting.</li>
+<li>All late assignments receive zero credits no matter what the reason. This means students must plan to finish their work before deadline to avoid delays due to &ldquo;technical difficulties&rdquo;. Online assignments (on Canvas) will timeout at the deadline and cannot be made up. Canvas gets very busy around common due times, such as midnight, so all assignments will be due at 4 AM for this reason. Emailed assignment will have an arrival timestamp. All emails received after the deadline will be considered late submission.</li>
+<li>The instructor reserves the right to interpret the class policies if confusions may occur.</li>
+</ul>
+<p><strong><em>Grading</em></strong></p>
+<p>Your grade will be based on 3-4 homework sets, two mid-terms, and a term paper.&nbsp; The weightage of the different components in your final grade will be based on the following table.</p>
+<table>
+<tbody>
+<tr>
+<td width="174">
+<p><strong>Assignment</strong></p>
+</td>
+<td width="198">
+<p><strong>Percentage of Final Grade</strong></p>
+</td>
+</tr>
+<tr>
+<td width="174">
+<p>Homework Sets (3-4)</p>
+</td>
+<td width="198">
+<p>20%</p>
+</td>
+</tr>
+<tr>
+<td width="174">
+<p>Midterm Exam 1</p>
+</td>
+<td width="198">
+<p>25%</p>
+</td>
+</tr>
+<tr>
+<td width="174">
+<p>Midterm Exam 2</p>
+</td>
+<td width="198">
+<p>25%</p>
+</td>
+</tr>
+<tr>
+<td width="174">
+<p>Term Paper</p>
+</td>
+<td width="198">
+<p>30%</p>
+</td>
+</tr>
+<tr>
+<td width="174">
+<p>TOTAL</p>
+</td>
+<td width="198">
+<p>100%</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&nbsp;</strong>The assigned letter grade will be based on the following table.</p>
+<table>
+<tbody>
+<tr>
+<td width="90">
+<p><strong>Percent</strong></p>
+</td>
+<td width="72">
+<p><strong>Grade</strong></p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>93.0 - 100</p>
+</td>
+<td width="72">
+<p>A</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>90.0 &ndash; 92.9</p>
+</td>
+<td width="72">
+<p>A-</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>87.0 &ndash; 89.9</p>
+</td>
+<td width="72">
+<p>B+</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>83.0 &ndash; 86.9</p>
+</td>
+<td width="72">
+<p>B</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>80.0 &ndash; 82.9</p>
+</td>
+<td width="72">
+<p>B-</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>77.0 &ndash; 79.9</p>
+</td>
+<td width="72">
+<p>C+</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>73.0 &ndash; 76.9</p>
+</td>
+<td width="72">
+<p>C</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>70.0 &ndash; 72.9</p>
+</td>
+<td width="72">
+<p>C-</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>67.0 &ndash; 69.9</p>
+</td>
+<td width="72">
+<p>D+</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>63.0 &ndash; 66.9</p>
+</td>
+<td width="72">
+<p>D</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>60.0 &ndash; 62.9</p>
+</td>
+<td width="72">
+<p>D-</p>
+</td>
+</tr>
+<tr>
+<td width="90">
+<p>0 &ndash; 59.9</p>
+</td>
+<td width="72">
+<p>E</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>In order to graduate, graduate students must have an overall GPA and a major GPA of 3.0 or better (B or better). Note: A &ldquo;B-&rdquo; average is equivalent to a GPA of 2.67, and therefore, it does not satisfy this graduation requirement.</p>
+<p>More information on UF grading policy may be found at: <span><a href="http://gradcatalog.ufl.edu/content.php?catoid=10&amp;navoid=2020">http://gradcatalog.ufl.edu/content.php?catoid=10&amp;navoid=2020</a></span></p>
+<p><strong><em>Homeworks </em></strong></p>
+<ul>
+<li>Approximately 3-4 homeworks will be assigned that must be turned in via Canvas.</li>
+<li>Your homework solutions must be submitted electronically via Canvas.</li>
+<li>All homework assignments are individual. You can discuss the general area with other students, but not the solution to the specific problem. The final submission must be your own work.</li>
+<li>The homework with the lowest grade will not be counted for the final grade. Late homework submissions will NOT be accepted. (See late policy above.)</li>
+<li>Requests for re-grading must be submitted via email or in writing within one week since the graded assignment is returned.</li>
+<li>Additional specific requirements may be imposed for individual assignments. Read carefully each homework description when it is distributed.</li>
+<li>Additional problem sets may be distributed. These will not be graded and it will not be necessary to turn them in. However, you are strongly recommended to use them for practice in order to do well in mid-terms.</li>
+</ul>
+<p>&nbsp;</p>
+<p><strong><em>Midterms</em></strong></p>
+<ul>
+<li>The midterm exams will be in class, and last 90 minutes.</li>
+<li>Dates of the mid-terms will be announced on Canvas by second week of September.</li>
+<li>Each mid-term will be closed book and closed notes. However, one sheet of US letter-sized paper with hand-written (not typed) notes is allowed.</li>
+<li>Make-up exams will not be given, except under medically documented sickness or family emergencies.</li>
+</ul>
+<p><strong><em>Term Paper </em></strong></p>
+<p>The term paper may include doing a project and writing a report on its conclusion, or a careful study/survey of specific areas. Potential topics for term paper will be discussed in class around the middle of September, and students will be required to select a topic by the first week of October. Term papers can be submitted individually or in groups of two.</p>
+<p><strong><em>Cheating</em></strong></p>
+<ul>
+<li>Students are expected to be honest and not cheat on their assignments/examinations/projects. Collaborations by forming study groups and having discussions with fellow studentsare highly encouraged, but copying each other&rsquo;s work is forbidden. You must write your own solutions in your own words. If you are unable to find the solutions to problems without step-by-step help from your study partners, you do not understand the solutions.</li>
+<li>Every student is expected to read, acknowledge, and adhere to the University of Florida honor code (see below).</li>
+<li>Any cheating or misconduct in any assignment or exam will result in a failing grade for the course and reporting to the honor court.</li>
+</ul>
+<p><strong><em>Students Requiring Accommodations </em></strong></p>
+<p>Students with disabilities requesting accommodations should first register with the Disability Resource Center (352-392-8565, <u>https://www.dso.ufl.edu/drc</u>) by providing appropriate documentation. Once registered, students will receive an accommodation letter which must be presented to the instructor when requesting accommodation. Students with disabilities should follow this procedure as early as possible in the semester.</p>
+<p><strong><em>Course Evaluation </em></strong></p>
+<p>Students are expected to provide feedback on the quality of instruction in this course by completing online evaluations at <span><a href="https://evaluations.ufl.edu/evals">https://evaluations.ufl.edu/evals</a></span>.&nbsp; Evaluations are typically open during the last two or three weeks of the semester, but students will be given specific times when they are open. Summary results of these assessments are available to students at <span><a href="https://evaluations.ufl.edu/results/">https://evaluations.ufl.edu/results/</a></span>.</p>
+<p><strong><em>University Honesty Policy </em></strong></p>
+<p>UF students are bound by The Honor Pledge which states, &ldquo;We, the members of the University of Florida community, pledge to hold ourselves and our peers to the highest standards of honor and integrity by abiding by the Honor Code. On all work submitted for credit by students at the University of Florida, the following pledge is either required or implied: &ldquo;On my honor, I have neither given nor received unauthorized aid in doing this assignment.&rdquo; The Honor Code (<u>https://www.dso.ufl.edu/sccr/process/student-conduct-honor-code/</u>) specifies a number of behaviors that are in violation of this code and the possible sanctions. Furthermore, you are obligated to report any condition that facilitates academic misconduct to appropriate personnel. If you have any questions or concerns, please consult with the instructor or TAs in this class.</p>
+<p><strong><em>Software Use</em></strong></p>
+<p>All faculty, staff and student of the University are required and expected to obey the laws and legal agreements governing software use. Failure to do so can lead to monetary damages and/or criminal penalties for the individual violator. Because such violations are also against University policies and rules, disciplinary action will be taken as appropriate. We, the members of the University of Florida community, pledge to uphold ourselves and our peers to the highest standards of honesty and integrity.</p>
+<p><strong><em>&nbsp;</em></strong></p>
+<p><strong><em>Campus Resources: </em></strong></p>
+<p><em><u>&nbsp;</u></em><em><u>Health and Wellness </u></em></p>
+<p><strong>U Matter, We Care: </strong></p>
+<p>If you or a friend is in distress, please contact <u>umatter@ufl.edu</u> or 352-392-1575 so that a team member can reach out to the student.</p>
+<p><strong>Counseling and Wellness Center:</strong> <span><a href="http://www.counseling.ufl.edu/cwc">http://www.counseling.ufl.edu/cwc</a></span>, and &nbsp;392-1575; and the University Police Department: 392-1111 or 9-1-1 for emergencies.</p>
+<p><strong>Sexual Assault Recovery Services (SARS) </strong></p>
+<p>Student Health Care Center, 392-1161.</p>
+<p><strong>University Police Department</strong> at 392-1111 (or 9-1-1 for emergencies), or <span><a href="http://www.police.ufl.edu/">http://www.police.ufl.edu/</a></span><u>.</u></p>
+<p><em><u>Academic Resources</u></em></p>
+<p><em><u>&nbsp;</u></em><strong>E-learning technical suppor</strong><em>t</em>, 352-392-4357 (select option 2) or e-mail to Learning-support@ufl.edu. <span><a href="https://lss.at.ufl.edu/help.shtml">https://lss.at.ufl.edu/help.shtml</a></span>.</p>
+<p><strong>Career Resource Center</strong>, Reitz Union, 392-1601.&nbsp; Career assistance and counseling. <span><a href="https://www.crc.ufl.edu/">https://www.crc.ufl.edu/</a></span>.</p>
+<p><em>&nbsp;</em><strong>Library Support</strong>, <span><a href="http://cms.uflib.ufl.edu/ask">http://cms.uflib.ufl.edu/ask</a></span>. Various ways to receive assistance with respect to using the libraries or finding resources.</p>
+<p><em>&nbsp;</em><strong>Teaching Center</strong>, Broward Hall, 392-2010 or 392-6420. General study skills and tutoring. <span><a href="https://teachingcenter.ufl.edu/">https://teachingcenter.ufl.edu/</a></span>.</p>
+<p><em>&nbsp;</em><strong>Writing Studio, 302 Tigert Hall</strong><em>, </em>846-1138. Help brainstorming, formatting, and writing papers. <span><a href="https://writing.ufl.edu/writing-studio/">https://writing.ufl.edu/writing-studio/</a></span>.</p>
+<p><strong>Student Complaints Campus</strong><em>: </em><span><a href="https://www.dso.ufl.edu/documents/UF_Complaints_policy.pdf">https://www.dso.ufl.edu/documents/UF_Complaints_policy.pdf</a></span>.</p>
+<p><strong>&nbsp;</strong><strong>On-Line Students Complaints</strong><em>: </em><span><a href="http://www.distance.ufl.edu/student-complaint-process">http://www.distance.ufl.edu/student-complaint-process</a></span>.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

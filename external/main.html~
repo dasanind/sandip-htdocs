@@ -1,0 +1,81 @@
+<html>
+<head>
+  <title>Integrating External Deduction Tools with ACL2</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Integrating External Deduction Tools with ACL2</H1>
+
+<big><a href="http://www.cs.utexas.edu/users/kaufmann">M. Kaufmann</a>, <a
+href="http://www.cs.utexas.edu/users/moore">J S. Moore</a>, <a href="http://www.cs.utexas.edu/users/sandip">S. Ray</a>, and <a
+href="http://www.cs.utexas.edu/users/reeber">E. Reeber</a>
+</big> <br><br>
+
+
+In <a
+href="http://www.ags.uni-sb.de/~chris/">C. Benzm&uuml;ller</a>, <a
+HREF="http://www.ecs.soton.ac.uk/people/bf">B. Fischer</a>, and <a
+href="http://www.cs.miami.edu/~geoff">G.  Sutcliffe</a>, editors, <a
+href="http://www.cs.miami.edu/~geoff/Conferences/IWIL-6/IWIL-6Proceedings.pdf">Proceedings</a>
+of the <a href="http://www.cs.miami.edu/~geoff/Conferences/IWIL-6/">6th
+International Workshop on the Implementation of Logics (IWIL 2006)</a>, Phnom
+Penh, Cambodia, November 2006, volume <a
+href="http://CEUR-WS.org/Vol-212">212</a> of <a href="http://ceur-ws.org">CEUR
+Workshop Proceedings</a>, pages 7-26.   <br><br>
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We present an interface connecting the ACL2 theorem prover with external
+deduction tools.  The logic of ACL2 contains several constructs intended to
+facilitate structuring of interactive proof development, which complicates the
+design of such an interface.  We discuss some of these complexities and develop
+a precise specification of the requirements from external tools for sound
+connection with ACL2.  We also develop constructs within ACL2 to enable the
+developers of external tools to satisfy our specifications.  
+
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="clause-processors.ps">ps</a>, <a
+ href="clause-processors.pdf">pdf</a>)</li>
+
+ <li>Presentation for IWIL 2006 (<a href="iwil.ppt">ppt</a>, <a
+ href="iwil.pdf"> pdf</a>)</li> [<span style="font-weight:
+ bold;">Note:</span> The original slides were made in powerpoint with
+ audio so as to enable remote video presentation, since I could not
+ attend the workshop personally.  However, I remove the audio from the
+ powerpoint here to facilitate download.]
+
+</ul>
+
+<br>
+
+<H2>BibTex</H2>
+
+<pre>
+@Inproceedings{kaufmann-integrating,
+  title      = "{Integrating External Deduction Tools with ACL2}",
+  author     = "M. Kaufmann and J S. Moore and S. Ray and E. Reeber",
+  booktitle  = "{Proceedings of the $6$th International Workshop on Implementation of 
+                 Logics (IWIL 2006)}",
+  editor     = "C. {Benzm\"uller} and B. Fischer and G. Sutcliffe",
+  year       = "2006",
+  month      = nov,
+  address    = "{Phnom Penh, Cambodia}",
+  series     = "{CEUR Workshop Proceedings}",
+  volume     = "212",
+  pages      = "7-26"
+}
+</pre>
+
+</body>
+</html>
+

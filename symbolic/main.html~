@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>Assertional Program Verification</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>A Symbolic Simulation Approach to Assertional Program Verification</H1>
+
+<big>
+<a href="http://web.cecs.pdx.edu/~jmatthew">J. Matthews</a>, <a
+href="http://www.cs.utexas.edu/~moore">J S. Moore</a>, <a
+href="http://www.cs.utexas.edu/~sandip">S. Ray</a>, and <a
+D. Vroon</big> <br><br>
+
+Draft, January 2005.
+
+<br><br>
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We present a method for automating deductive proofs of machine-level sequential
+programs modeled using operational semantics. Given programs annotated by the
+user with assertions at cutpoints, we show how to use the operational semantics
+of the machine to automatically derive verification conditions by symbolic
+simulation. No verification condition generator is necessary, nor is it
+required to manually specify an inductive invariant for the machine model. Both
+partial and total correctness are considered. The methodology has been
+formalized in both the ACL2 and Isabelle theorem provers, and applied to verify
+programs on operational machine models in ACL2.
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="symbolic.ps">ps</a>, <a
+ href="symbolic.pdf">pdf</a>)</li>
+
+ <li><span style="font-weight:bold">Isabelle proof scripts</span> (<a
+ href="symbolic-isabelle.tar.gz">tar.gz</a>)<br>
+
+<li>
+<span style="font-weight:bold">ACL2 proof scripts and macro:</span>
+ See the directory <code>books/symbolic/</code> in the current ACL2
+ distribution.  </li>
+
+</ul>
+
+</body>
+</html>
+

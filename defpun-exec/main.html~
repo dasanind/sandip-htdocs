@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Attaching Efficient Executability to Partial Functions</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Attaching Efficient Executability to Partial Functions
+in ACL2</H1>
+
+
+<big> <a href="http://www.cs.utexas.edu/users/sandip">S. Ray</a> </big><br><br>
+
+In <a href="http://www.cs.utexas.edu/~kaufmann">M. Kaufmann</a> and <a
+href="http://www.cs.utexas.edu/~moore">J S. Moore</a>, editors, <a
+href="http://www.cs.utexas.edu/users/moore/acl2/workshop-2004/">5th
+International Workshop on the ACL2 Theorem Prover and Its Applications (ACL2
+2004)</a>, Austin, TX, November 2004<br> <br>
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+
+We describe a macro <code>defpun-exec</code> to attach executable bodies to
+partial functions in ACL2. The macro makes use of two new features
+<code>mbe</code> and <code>defexec</code>, introduced in ACL2 from version 2.8,
+that allow a clean separation of execution efficiency from logical elegance.
+
+<H2>Relevant files</H2> 
+
+<ul> 
+ 
+  <li>Paper (<a href="defpun-exec.ps">ps</a>, <a
+  href="defpun-exec.pdf">pdf</a>)</li> 
+
+  <li>Slides for ACL2 2004 (<a href="slides.ps">ps</a>, <a
+  href="slides.pdf">pdf</a>)</li>
+  
+  <li>
+  <span style="font-weight:bold">Supporting materials:</span> See the
+ directory <code>books/workshops/2004/ray/support/</code> in the <a
+ href="http://www.cs.utexas.edu/users/moore/acl2/">current ACL2
+ distribution</a>. (<span style="color:blue">Note:</span> You need the
+ workshops tarball. See the instructions for installing ACL2 in the <a
+ href="http://www.cs.utexas.edu/users/moore/acl2">ACL2 homepage</a>.)
+ </li> 
+</ul>
+
+<br>
+
+<h2>BibTex</h2>
+
+<pre>
+@Inproceedings{ray-attaching,
+  title     = "{Attaching Efficient Executability to Partial Functions in ACL2}",
+  author    = "S. Ray",
+  editor    = "M. Kaufmann and J S. Moore",
+  booktitle = "{$5$th International Workshop on the ACL2 Theorem Prover and Its Applications
+                (ACL2 2004)}",
+  month     = nov,
+  address   = "{Austin, TX}",
+  year      = "2004"
+}
+</pre>
+
+</body>
+</html>

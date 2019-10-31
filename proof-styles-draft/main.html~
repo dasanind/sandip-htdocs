@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Proof Styles in Operational Semantics</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Proof Styles in Operational Semantics</H1>
+
+<big><a href="http://www.cs.utexas.edu/users/sandip">S. Ray</a> and <a
+href="http://www.cs.utexas.edu/users/moore">J S. Moore</a> </big><br><br>
+
+Draft, December 2003. <br><br>
+
+<hr style="width: 100%; height: 2px;">
+
+
+<H2>Abstract</H2>
+
+We relate two well-studied methodologies, use of inductive invariants and clock
+functions, in deductive verification of operationally modeled sequential
+programs.  We prove that the two methodologies are equivalent in the following
+sense: If the logic used is sufficiently expressive then one can mechanically
+transform a proof of a program in one methodology to a proof in the other.
+Both partial and total correctness are considered in this context.  We also
+show that the mechanical transformation is compositional in that different
+parts of a program can be verified using different methodologies to achieve a
+complete proof of the entire program.  Our proof of equivalence has been
+mechanically verified by the ACL2 theorem prover and we discuss automatic tools
+in the form of ACL2 macros to carry out the mechanical transformation between
+the two methodologies in the context of ACL2 theorem proving.
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="proof-styles-long.ps">ps</a>, <a
+ href="proof-styles-long.pdf">pdf</a>)</li>
+
+ <li><span style="font-weight:bold">Supporting ACL2 proof
+ scripts:</span> See the directory <code>books/proofstyles/</code> in
+ the current ACL2 distribution.
+
+ </li>
+</ul>
+</body>
+</html>
+

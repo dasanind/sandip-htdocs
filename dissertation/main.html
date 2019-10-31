@@ -1,0 +1,108 @@
+<html>
+<head>
+  <title>
+Using Theorem Proving and Algorithmic Decision Procedures for Large-Scale
+System Verification 
+</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Using Theorem Proving and Algorithmic Decision Procedures for Large-Scale
+System Verification</H1>
+
+<big><a href="http://www.cs.utexas.edu/~sandip">S. Ray</a></big><br><br>
+
+Ph.D Dissertation, <a href="http://www.cs.utexas.edu">Department of
+Computer Sciences</a>, <a href="http://www.utexas.edu">The University
+of Texas at Austin</a>, December 2005.
+
+
+<p>
+<small> © 2005 <a href="http://www.cs.utexas.edu/~sandip">Sandip
+Ray</a>.  All rights reserved.</small>
+
+<br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+
+<H2>Abstract</H2>
+
+The goal of formal verification is to use mathematical methods to prove that a
+computing system meets its specifications. When applicable, it provides a
+higher assurance than simulation and testing in correct system
+execution. However, the capacity of the state of the art in formal verification
+today is still far behind what is necessary for its widespread adoption in
+practice. In this dissertation, we devise methods to increase the capacity of
+formal verification.
+<p>
+
+Formal verification techniques can be broadly divided into two categories,
+namely deductive techniques or theorem proving, and decision procedures such as
+model checking, equivalence checking, and symbolic trajectory
+evaluation. Neither deductive nor algorithmic techniques individually scale up
+to the size of modern industrial systems, albeit for orthogonal
+reasons. Decision procedures suffer from <span style="font-style:
+italic;">state explosion</span>. Theorem proving requires manual
+assistance. Our methods involve a sound, efficient, and scalable integration of
+deductive and algorithmic techniques.
+<p>
+
+There are four main contributions in this dissertation. First, we present
+several results that connect different deductive proof styles used in the
+verification of sequential programs. The connection allows us to efficiently
+combine theorem proving with symbolic simulation to prove the correctness of
+sequential programs without requiring a verification condition generator or
+manual construction of a global invariant. Second, we formalize a notion of
+correctness for reactive concurrent programs that affords effective reasoning
+about infinite computations. We discuss several reduction techniques that
+reduce the correctness proofs of concurrent programs to the proof of an
+invariant. Third, we present a method to substantially automate the process of
+discovering and proving invariants of reactive systems. The method combines
+term rewriting with reachability analysis to generate efficient <span
+style="font-style: italic;">predicate abstractions</span>. Fourth, we present
+an approach to integrate model checking procedures with deductive reasoning in
+a sound and efficient manner.
+<p>
+
+We use the ACL2 theorem prover to demonstrate our methods. A consequence 
+of our work is the identification of certain limitations in the logic and
+implementation of ACL2. We recommend several augmentations of ACL2 to
+facilitate deductive verification of large systems and integration with
+decision procedures.
+
+
+<H2>Committee</H2>
+
+<ul> <li> <a href="http://www.cs.utexas.edu/~moore">J Strother Moore</a>,
+Supervisor </ul> 
+
+<ul><li> <a href="http://www.cs.utexas.edu/~emerson">E. Allen
+Emerson</a></ul>
+
+<ul><li> <a href="http://www.cs.utexas.edu/~gouda">Mohamed
+G. Gouda</a></ul>
+
+<ul><li> <a href="http://www.cs.utexas.edu/~hunt">Warren A. Hunt,
+Jr.</a></ul>
+
+<ul><li> <a href="http://www.cs.utexas.edu/~plaxton">C. Greg
+Plaxton</a></ul>
+
+<ul><li> <a href="http://web.cecs.pdx.edu/~jmatthew">John
+R. Matthews</a></ul>
+
+
+<H2>Relevant Files</H2>
+
+<ul> <li> Dissertation Preprint (<a href="dissertation.pdf">pdf</a>)
+</ul>
+
+</body>
+</html>

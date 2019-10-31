@@ -1,0 +1,73 @@
+<html>
+<head>
+  <title>A Generalized Solution for the While Challenge</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>A Generalized Solution for the While Challenge</H1>
+
+<big> <a href="http://www.cs.utexas.edu/users/sandip">S. Ray</a>
+</big><br><br>
+
+Rump Session Presentation
+<br>
+<br>
+
+In <a href="http://www.cs.uwyo.edu/~ruben">R. Gamboa</a>, <a
+href="http://www.cs.utexas.edu/users/sawada">J. Sawada</a>, and <a
+href="http://www.cs.uwyo.edu/~cowles">J. Cowles</a>, editors,
+Proceedings of the <a href="http://www.cs.uwyo.edu/~ruben/acl2-07">7th
+International Workshop on the ACL2 Theorem Prover and its Applications
+(ACL2 2007)</a>, Austin, TX, November 2007, pages 83-84.  
+
+<br>
+<br>
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Relevant files</H2> 
+
+<ul> 
+
+ <li>Extended Abstract (<a href="while.ps">ps</a>, <a
+ href="while.pdf">pdf</a>)</li>
+
+ <li>Slides for ACL2 2007 Rump Session (<a
+ href="while-presentation.pdf">pdf</a>)</li>
+  
+
+<li><span style="font-weight:bold">Supporting materials:</span> See
+ the directory
+ <code>books/workshops/2007/cowles-et-al/support/ray/</code> in the
+ current ACL2 distribution</a>. (<span style="color:blue">Note:</span>
+ You need the workshops tarball. See the instructions for installing
+ ACL2 in the <a href="http://www.cs.utexas.edu/users/moore/acl2">ACL2
+ homepage</a>.) </li> </ul>
+
+<br>
+
+<h2>BibTex</h2>
+
+<pre>
+@Inproceedings{ray-generalized,
+  author    = "S. Ray",
+  title     = "{A Generalized Solution for the While Challenge}",
+  editor    = "R. Gamboa and J. Sawada and J. Cowles",
+  booktitle = "{Proceedings of the $7$th International Workshop on 
+                the ACL2 Theorem Prover and Its Applications (ACL2 2007)}",
+  address   = "{Austin, TX}",
+  month     = nov,
+  pages     = "83-84",
+  year      = "2007"
+}
+</pre>
+
+
+</body>
+</html>
+

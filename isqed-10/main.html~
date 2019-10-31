@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <title>Modeling and Verification of Industrial Flash Memories</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Modeling and Verification of Industrial Flash Memories</H1>
+
+<big><a href="http://www.cs.utexas.edu/~sandip">S. Ray</a>, <a
+href="http://www.cerc.utexas.edu/~jay">J. Bhadra</a>, T. Portlock, and
+R. Syzdek </big> <br><br>
+
+
+To Appear in P. Chatterjee and K. Gadepally,
+editors, Proceedings of the <a href="http://www.isqed.org">11th
+International Symposium on Quality Electronic Design (ISQED 2010)</a>,
+San Jose, CA, March 2010.  <a
+href="http://www.ieee.org">IEEE</a>.
+
+<br><br> 
+
+<small> &copy; 2009 <a href="http://www.ieee.org">IEEE</a>.  Personal use of this
+material is permitted.  However, permission to reprint/republish this material
+for advertising or promotional purposes or for creating new collective works
+for resale or redistribution to servers or lists, or to reuse any copyrighted
+component of this work in other works must be obtained from the IEEE.  </small>
+
+<br><br> 
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We present a method to abstract, formalize, and verify industrial
+flash memory implementations.  Flash memories contain specialized
+transistors, <i>e.g.</i>, floating gate and split gate devices, which
+preclude the use of traditional switch-level abstractions for their
+verification.  We circumvent this problem through behavioral
+abstractions, which allow formalization of the behaviors of the design
+as interacting state machines.  Behavioral abstractions are agnostic
+to transistor type, making them suitable for formalizing flash
+memories.  We have verified industrial flash memory implementations
+based on both floating gate and split gate technologies.  Our work
+provides the first formal functional verification results for
+industrial flash memories.
+
+
+<H2>Relevant files</H2>
+
+<ul>
+ <li>Paper (<a href="flash.ps">ps</a>, <a
+ href="flash.pdf">pdf</a>)</li>
+
+ </ul>
+
+<br>
+
+
+</body>
+</html>
+

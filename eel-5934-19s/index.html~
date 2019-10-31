@@ -1,0 +1,885 @@
+<H2>Automotive Safety and Security</H2>
+
+<p><span style="font-weight: 400;">EEL 5934&nbsp;&nbsp;</span><br />
+  Class Periods:<span style="font-weight: 400;"> <span>Tue 3:00-4:55pm; Thu 4:05-4:55pm&nbsp; &nbsp;</span></span><br />
+  Location:<span style="font-weight: 400;"> &nbsp; <span>CSE E107</span></span><br />
+  Academic Term:<span style="font-weight: 400;"> &nbsp;</span><span style="font-weight: 400;">Spring 2019</span></br>
+Class Canvas Page (with valid GatorLink account): Click <a href="https://ufl.instructure.com/courses/360707">here</a></p>
+
+
+<p><strong><i>Instructor:</i></strong></p>
+<ul>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name:</span><span style="font-weight: 400;"> &nbsp;Sandip Ray</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email Address: &nbsp;sandip@ece.ufl.edu</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Office Phone Number: </span><span style="font-weight: 400;">+1 (352) 392-1605</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Office Hours: &nbsp;&nbsp;</span><span style="font-weight: 400;">Wed 3-4:30pm BEN 323</span></li>
+</ul>
+
+<p><strong><i></i></strong><strong style="font-size:
+1rem;"><i>Course Description</i></strong></p>
+
+In this course, we will study architectures of current and
+emergent automotive systems, and get a sense of the trend as
+we move towards increasingly connected autonomous
+vehicles. We are on the verge of the so-called
+4<sup>th</sup> Industrial Revolution, ushering in a world
+where all things, humans, and processes, and data
+continuously communicate with one another enabling them to
+respond smartly to their environment.  Autonomous, connected
+vehicles constitute one of the most crucial and most complex
+components of this connected ecosystem.  Electronics and
+software play the central role in realizing the
+functionality and security needs for autonomous cars.  We
+will explore the role of automotive systems in the context
+of connectivity and analyze some key challenges in making
+these systems robust, i.e., safe, secure, and reliable, in
+this context.</p>
+
+The course will bring together concepts from diverse areas
+of Computer Science and Computer Engineering, including
+Computer Architecture, Hardware and System Security,
+Real-time Systems, Machine Learning, Formal methods,
+Embedded system design, and Computer Networks.  You will get
+an understanding of the cooperation, conflicts, and
+trade-offs among these largely disparate areas, and how to
+account for them the design of realistic, safety-critical
+applications.  You will get the opportunity to have hands-on
+experience in design and analysis of several aspects of
+robust, autonomous, automotive systems.
+
+You should take the course if one of more of the following
+is applicable to you:
+
+<ul>
+  <li>You want to understand what enables many of the cool
+    features you like in a modern automobile.
+  <li>You want to understand the challenges (and approaches)
+  to architecting the self-driving cars of the future.
+  <li>You want to understand the safety and security issues
+  in current and emergent vehicles.
+  <li>You want to learn the behind-the-scene technologies
+  involved in hacking a car.
+</ul>
+
+
+<p><strong><i>Course Pre-Requisites /
+Co-Requisites</i></strong></p>
+<p><span style="font-weight: 400;">No specific
+pre-requisite.  However, students are expected to have a
+general background on Computer Architecture and Digital
+Systems Design.  Students should also have some familiarity
+with programming in C/C++, debugging, and the Linux
+operating system.</span></p>
+
+<p><strong><i>Course Objectives</i></strong></p>
+<p><span style="font-weight: 400;">Upon completion of the
+course, students should have a knowledge of the working
+principles of current and future automotive
+systems:</span></p>
+<ul>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;</span> <span style="font-weight: 400;">Electronics and software responsible for various autonomous functionality of the vehicle</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;</span> <span style="font-weight: 400;">Notions such as functional safety, security, and reliability in current and future cars</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;</span> <span style="font-weight: 400;">Trade-offs and conflicts involved in automotive electronic design</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;</span> <span style="font-weight: 400;">Variety of automotive standards, certifications, and regulations</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;</span> <span style="font-weight: 400;">Current practices in automotive safety and security design</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;</span> <span style="font-weight: 400;">Automotive software challenges</span></li>
+</ul>
+<p><strong><i>Materials and Supply Fees</i></strong></p>
+<p><span style="font-weight: 400;">None</span></p>
+<p><strong><i>Required Textbooks and Software</i></strong></p>
+<p><span style="font-weight: 400;">No textbook. &nbsp;Relevant research papers and other notes will be provided in class.</span></p>
+
+<p><strong><i>Course Contents (Tentative)</i></strong></p>
+<ul>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduction to automotive systems and their evolution</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Challenges and characteristics of autonomous automotive systems</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduction to automotive robustness: safety, security, reliability</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Functional Safety: ISO26262 and Its variants</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Automotive security: How to hack a car?</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trade-offs between security, safety, privacy, and real-time constraints</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Automotive systems and transportation infrastructure: communication and conflicts</span></li>
+<li><span style="font-weight: 400;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Challenges in automotive supply chain</span></li>
+</ul>
+
+<p><strong><i>Course Schedule</i></strong></p>
+
+<table border = "1">
+
+<tr>
+  <td>Date</td>
+  <td>Lecture </td>
+  <td>Topic</td>
+  <td>Presenter</td>
+</tr>
+
+<tr>
+  <td>Jan 8</td>
+  <td> Lecture 1</td>
+  <td>Overview of Automotive Robustness</td>
+  <td>Ray</td>
+</tr>
+
+<tr>
+  <td>Jan 8</td>
+  <td> Lecture 2</td>
+  <td> Introduction to Automotive Systems Architecture</td>
+  <td>Ray</td>
+</tr>
+
+<tr>
+  <td>Jan 10</td>
+  <td> Lecture 3</td>
+  <td>Estimation of Safe Sensor Measurements of Autonomous
+  System Under Attack</td>
+  <td>Dutta</td>
+</tr>
+
+<tr>
+  <td>Jan 15</td>
+  <td> Lecture 4</td>
+  <td>Overview of Automotive Electronics</td>
+  <td>Ray</td>
+</tr>
+
+<tr>
+  <td>Jan 15</td>
+  <td> Lecture 5</td>
+  <td>Introduction to Functional Safety</td>
+  <td>Ray</td>
+</tr>
+
+
+<tr>
+  <td>Jan 17</td>
+  <td> Lecture 6</td>
+  <td>Automotive Sensor Security</td>
+  <td>Dutta</td>
+</tr>
+
+
+ <tr>
+  <td>Jan 22</td>
+  <td> Lecture 7</td>
+  <td>Overview of Functional Safety</td>
+  <td>Ray</td>
+</tr>
+
+ 
+ <tr>
+  <td>Jan 22</td>
+  <td> Lecture 8</td>
+  <td>Introduction to Automotive Security</td>
+  <td>Ray</td>
+</tr>
+
+
+<tr>
+  <td>Jan 24</td>
+  <td> Lecture 9</td>
+  <td>Automotive Security: Car Hacking (Overview)</td>
+  <td>Ray</td>
+</tr>
+
+<tr>
+  <td>Jan 29</td>
+  <td> Lecture 10</td>
+  <td>Paper Presentation: <i>Automotive Cyber-Physical Systems: A Tutorial Introduction</i> </td>
+  <td>Laske</td>
+</tr>
+<tr>
+  <td>Jan 29</td>
+  <td> Lecture 11</td>
+  <td>Paper Presentation: <i>Challenges in Automotive Software Engineering</i> </td>
+  <td>Rolke</td>
+</tr>
+
+<tr>
+  <td>Jan 31</td>
+  <td> Lecture 12</td>
+  <td>Paper Presentation: <i>A case study of issues related
+  to Automotive E/E system architecture
+  development</i> </td>
+  <td>Chintalapati</td>
+</tr>
+
+<tr>
+  <td>Feb 5</td>
+  <td> Lecture 13</td>
+  <td>Paper Presentation: <i>A Tutorial Survey on Vehicular Ad Hoc Networks</i> </td>
+  <td>Shoner</td>
+</tr>
+
+<tr>
+  <td>Feb 5</td>
+  <td> Lecture 14</td>
+  <td>Paper Presentation: <i>Learning to Navigate in Cities Without a Map</i> </td>
+  <td>DeepEyes</td>
+</tr>
+
+<tr>
+  <td>Feb 7</td>
+  <td> Lecture 15</td>
+  <td>Paper Presentation: <i>Deep Learning in the Automotive
+  Industry: Applications and Tools</i> </td>
+  <td>Boddupalli</td>
+</tr>
+
+<tr>
+  <td>Feb 12</td>
+  <td> Lecture 16</td>
+  <td>Paper Presentation: <i>RACE: A Centralized Platform
+  Computer Based Architecture for Automotive
+  Applications</i> </td>
+  <td>Patel</td>
+</tr>
+
+<tr>
+  <td>Feb 12</td>
+  <td> Lecture 17</td>
+  <td>Paper Presentation: <i>In-Car Positioning and
+Navigation Technologies --- A Survey</i> </td>
+  <td>Tanner</td>
+</tr>
+
+<tr>
+  <td>Feb 14</td>
+  <td> Lecture 18</td>
+  <td>Automotive Supply Chain Security</td>
+  <td>Ray</td>
+</tr>
+
+<tr>
+  <td>Feb 19</td>
+  <td> Lecture 19</td>
+  <td>Paper Presentation: <i>From a Federated to an Integrated Automotive Architecture</i> </td>
+  <td>S.T.A.A.R</td>
+</tr>
+
+<tr>
+  <td>Feb 19</td>
+  <td> Lecture 20</td>
+   <td>Automotive Supply Chain Security (Contd.)</td>
+  <td>Ray</td>
+</tr>
+
+<tr>
+  <td>Feb 21</td>
+  <td> Lecture 21</td>
+  <td>Hardware Security Validation</td>
+  <td>Ray</td>
+</tr>
+
+<tr>
+  <td>Feb 26</td>
+  <td> Lecture 22</td>
+  <td>Hardware Security Validation (Contd.) </td>
+  <td>Ray</td>
+</tr>
+
+<tr>
+  <td>Feb 26</td>
+  <td> Lecture 23</td>
+  <td>Security Validation of Automotive Software</td>
+  <td>Ray</td>
+</tr>
+
+<tr>
+  <td>Feb 28</td>
+  <td> Lecture 24</td>
+  <td>Introduction to Transportation Security</td>
+  <td>Ray</td>
+</tr>
+
+
+<tr>
+  <td>March 12</td>
+  <td> Lecture 25</td>
+  <td> Paper Presentation: <i>The Automotive Standard ISO 26262, the innovative driver for enhanced safety assessment & technology for motor cars</i>
+ </td>
+  <td>Boddupalli  </td>
+</tr>
+
+
+<tr>
+  <td>March 12</td>
+  <td> Lecture 26</td>
+  <td> Paper Presentation: <i>Integrated safety and architecture modeling for automotive embedded systems</i></td>
+  <td> Patel </td>
+</tr>
+
+
+<tr>
+  <td>March 12</td>
+  <td> Lecture 27</td>
+  <td> Introduction to Security Certifications </td>
+  <td> Ray </td>
+</tr>
+
+<tr>
+  <td>March 14</td>
+  <td> Lecture 28</td>
+  <td>Paper Presentation: <i>Model-based diagnosis and fault tolerant control for ensuring torque functional safety of pedal-by-wire systems</i>
+    <br>Paper Presentation: <i>A structured hazard analysis and risk assessment method for automotive system --- A descriptive study</i> </td>
+  <td> Tanner <br>Rolke </td>
+</tr>
+
+<tr>
+  <td>March 19</td>
+  <td> Lecture 29</td>
+  <td> Paper Presentation: <i>Automotive Hardware Development According to ISO 26262</i>
+ </td>
+  <td> Shoner </td>
+</tr>
+
+<tr>
+  <td>March 19</td>
+  <td> Lecture 30</td>
+  <td> Paper Presentation: <i>Architectural design and
+reliability analysis of a fail-operational brake-by-wire
+system from ISO 26262 perspectives</i> </td>
+  <td> Laske </td>
+</tr>
+<tr>
+  <td>March 19</td>
+  <td> Lecture 31</td>
+  <td> Paper Presentation: <i>A structured and systematic
+  model-based development method for automotive systems,
+  considering the OEM/supplier interface</i></td>
+  <td>DeepEyes</td>
+</tr>
+
+<tr>
+  <td>March 21</td>
+  <td> Lecture 32</td>
+  <td>Paper Presentation: <i>How future automotive
+functional safety requirements will impact microprocessors
+design</i>
+    <br>Paper Presentation: <i>Determination of Functional
+    Safety Coupled with Logical Architecture.</i> </td>
+  <td> S.T.A.A.R <br> Chintalapati  </td>
+</tr>
+
+<tr>
+  <td>March 26</td>
+  <td> Lecture 33</td>
+  <td> Paper Presentation: <i> Vision-Based Road Detection in Automotive Systems: A Real-time Expectation-Driven Approach <br>Paper Presentation: <i> Operational and System Hazard Analysis in a Safe Systems Requirement
+Engineering Process</td>
+  <td> Garza  </td>
+</tr>
+
+<tr>
+  <td>March 26</td>
+  <td> Lecture 34</td>
+  <td> Architecture for SoC Security Policies and Application to Automotive Robustness</td>
+  <td> Deb Nath </td>
+</tr>
+
+<tr>
+  <td>March 28</td>
+  <td> Lecture 35</td>
+  <td> Topics in Automotive Security Research </td>
+  <td>Biron</td>
+</tr>
+
+<tr>
+  <td>April 2</td>
+  <td> Lecture 36</td>
+  <td> Paper Presentation: <i>Automotive Proxy Based Security Architecture for CE device integration</i> </td>
+  <td> Patel </td>
+</tr>
+
+<tr>
+  <td>April 2</td>
+  <td> Lecture 37</td>
+  <td> Paper Presentation: <i>Information-Driven Autonomous Intersection Control</i> </td>
+  <td> Rolke  </td>
+</tr>
+<tr>
+  <td>April 2</td>
+  <td> Lecture 38</td>
+  <td> Paper Presentation: <i>Security threats to automotive
+  CAN networks: Practical examples and selected short-term
+  countermeasures</i></td>
+  <td> Tanner  </td>
+</tr>
+
+<tr>
+  <td>April 4</td>
+  <td> Lecture 39</td>
+  <td>Achieving functional safety for automotive SoCs: practices and challenges</td>
+  <td> Chen </td>
+</tr>
+
+<tr>
+  <td>April 9</td>
+  <td> Lecture 40</td>
+  <td> Paper Presentation: <i>Experimental Security Analysis of a Modern Automobile</i> </td>
+  <td> Shoner </td>
+</tr>
+
+<tr>
+  <td>April 9</td>
+  <td> Lecture 41</td>
+  <td> Paper Presentation: <i>An Amanat-Based Multi-Party Certification Protocol
+
+for Outsourced Software in Automotive Systems</i></td>
+  <td> Laske </td>
+</tr>
+
+<tr>
+  <td>April 9</td>
+  <td> Lecture 42</td>
+  <td> Paper Presentation: <i>Comprehensive Experimental Analyses of Automotive Attack Surfaces</i> </td>
+  <td> DeepEyes</td>
+</tr>
+
+<tr>
+  <td>April 11</td>
+  <td> Lecture 43</td>
+  <td> Paper Presentation: <i>Securing Self-Driving Cars</i> <br>Paper Presentation: <i>Remote Exploitation of an Unaltered Passenger Vehicle</i> </td>
+  <td> Garza <br>  Boddupalli </td>
+</tr>
+
+
+<tr>
+  <td>April 16</td>
+  <td> Lecture 44</td>
+  <td> Paper Presentation: <i>Automotive Security: Cryptography for Car2X Communication</i> </td>
+  <td> S.T.A.A.R</td>
+</tr>
+
+<tr>
+  <td>April 16</td>
+  <td> Lecture 45</td>
+  <td> Paper Presentation: <i>BlockChain: A Distributed Solution to Automotive Security and Privacy</i> </td>
+  <td> Chintalapati</td>
+</tr>
+
+
+<tr>
+  <td>April 16</td>
+  <td> Lecture 46</td>
+  <td> TBD </td>
+  <td>Du</td>
+</tr>
+
+<tr>
+  <td>April 18</td>
+  <td> Lecture 47</td>
+  <td> Project Presentations </td>
+  <td>Chintalapati <br> Shoner <br> Rolke </td>
+</tr>
+
+<tr>
+  <td>April 23</td>
+  <td> Lecture 48</td>
+  <td> Project Presentations </td>
+  <td>Garza <br> Laske <br> DeepEyes </td>
+</tr>
+
+<tr>
+  <td>April 23</td>
+  <td> Lecture 49</td>
+  <td> Project Presentations </td>
+  <td> Boddupalli <br> Patel <br> S.T.A.A.R <br> Tanner</td>
+</tr>
+
+
+</table>
+
+<p><strong><i>Attendance Policy, Class Expectations, and Make-Up Policy</i></strong></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight:
+400;">Attendance is required, but not monitored. Students
+are responsible for being up-to-date with all information
+communicated in class.</span></li>
+<li style="font-weight: 400;"><span style="font-weight:
+400;">The class is interactive. Feel free to interrupt and
+ask relevant questions. &nbsp;&nbsp;However, questions not
+directly related to the topic under discussion or requiring
+elaborate answers may be relegated to office
+hours.</span></li>
+<li style="font-weight: 400;"><span style="font-weight:
+400;">Cell phones may not be used as calculators. Cell
+phones must be turned off at all times including exams and
+lectures.</span></li>
+<li style="font-weight: 400;"><span style="font-weight:
+400;">The communication functions including text messaging
+on all devices must be turned off during exams.</span></li>
+<li style="font-weight: 400;"><span style="font-weight:
+400;">Students are not allowed to sell or distribute notes
+provided for this class.</span></li>
+<li style="font-weight: 400;"><span style="font-weight:
+400;">Excused absences are consistent with university
+policies in the graduate catalog
+(</span><a href="http://gradcatalog.ufl.edu/content.php?catoid=11&amp;navoid=2486#attendance"><span style="font-weight:
+400;">http://gradcatalog.ufl.edu/content.php?catoid=11&amp;navoid=2486#attendance</span></a><span style="font-weight:
+400;">) and require appropriate documentation.</span></li>
+<li style="font-weight: 400;"><span style="font-weight:
+400;">Students who anticipate the necessity of being absent
+from class due to the observation of a major religious
+observance must provide notice of the date(s) in writing by
+the second meeting.</span></li>
+<li style="font-weight: 400;"><span style="font-weight:
+400;">All late assignments receive zero credits no matter
+what the reason. This means students must plan to finish
+their work before deadline to avoid delays due to
+&ldquo;technical difficulties&rdquo;. Online assignments (on
+Canvas) will timeout at the deadline and cannot be made
+up. Canvas gets very busy around common due times, such as
+midnight, so all assignments will be due at 4 AM for this
+reason. Emailed assignment will have an arrival
+timestamp. All emails received after the deadline will be
+considered late submission.</span></li>
+<li style="font-weight: 400;"><span style="font-weight:
+400;">The instructor reserves the right to interpret the
+class policies if confusions may occur.</span></li>
+</ul>
+
+<span style="font-weight: 400;">Excused absences are
+consistent with university policies in the graduate catalog
+(</span><a href="http://gradcatalog.ufl.edu/content.php?catoid=11&amp;navoid=2486#attendance"><span style="font-weight:
+400;">http://gradcatalog.ufl.edu/content.php?catoid=11&amp;navoid=2486#attendance</span></a><span style="font-weight:
+400;">) and require appropriate documentation.</span></p>
+
+<p><strong><i>Evaluation of Grades</i></strong>
+<table>
+<tbody>
+<tr>
+<td>
+<p><i>Assignment</i></p>
+</td>
+<td>
+<p><i>Percentage of Final Grade</i></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Paper presentation</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">30%</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Presentation review</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">30%</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">Term paper/project</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">40%</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">TOTAL</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">100%</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong><i>Grading Policy</i></strong></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Percent</strong></p>
+</td>
+<td>
+<p><strong>Grade</strong></p>
+</td>
+<td>
+<p><strong>Grade Points</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">93.0 - 100</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">A</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">4.00</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">90.0 &ndash; 92.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">A-</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3.67</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">87.0 &ndash; 89.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">B+</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3.33</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">83.0 &ndash; 86.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">B</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">3.00</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">80.0 &ndash; 82.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">B-</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2.67</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">77.0 &ndash; 79.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">C+</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2.33</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">73.0 &ndash; 76.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">C</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">2.00</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">70.0 &ndash; 72.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">C-</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">1.67</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">67.0 &ndash; 69.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">D+</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">1.33</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">63.0 &ndash; 66.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">D</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">1.00</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">60.0 &ndash; 62.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">D-</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">0.67</span></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><span style="font-weight: 400;">0 &ndash; 59.9</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">E</span></p>
+</td>
+<td>
+<p><span style="font-weight: 400;">0.00</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+
+<p><span style="font-weight: 400;">The class is not
+curved. &nbsp;If everyone does well, everyone can get an
+A. </span></p>
+
+<p><span style="font-weight: 400;">In order to graduate,
+graduate students must have an overall GPA and a major GPA
+of 3.0 or better (B or better). Note: A &ldquo;B-&rdquo;
+average is equivalent to a GPA of 2.67, and therefore, it
+does not satisfy this graduation requirement.</span></p>
+<p><span style="font-weight: 400;">More information on UF grading policy may be found at:</span><a href="http://gradcatalog.ufl.edu/content.php?catoid=10&amp;navoid=2020"> <span style="font-weight: 400;">http://gradcatalog.ufl.edu/content.php?catoid=10&amp;navoid=2020</span></a></p>
+
+<p><strong><i>Students Requiring Accommodations</i></strong></p>
+
+<p><span style="font-weight: 400;">Students with
+disabilities requesting accommodations should first register
+with the Disability Resource Center
+(352-392-8565, </span><span style="font-weight:
+400;">https://www.dso.ufl.edu/drc</span><span style="font-weight:
+400;">) by providing appropriate documentation. Once
+registered, students will receive an accommodation letter
+which must be presented to the instructor when requesting
+accommodation. Students with disabilities should follow this
+procedure as early as possible in the semester.</span></p>
+
+<p><strong><i>Course Evaluation</i></strong></p>
+
+<p><span style="font-weight: 400;">Students are expected to
+provide feedback on the quality of instruction in this
+course by completing online evaluations
+at</span><a href="https://evaluations.ufl.edu/evals"> <span style="font-weight:
+400;">https://evaluations.ufl.edu/evals</span></a><span style="font-weight:
+400;">. &nbsp;Evaluations are typically open during the last
+two or three weeks of the semester, but students will be
+given specific times when they are open. Summary results of
+these assessments are available to students
+at</span><a href="https://evaluations.ufl.edu/results/"> <span style="font-weight:
+400;">https://evaluations.ufl.edu/results/</span></a><span style="font-weight:
+400;">.</span></p>
+
+<p><strong><i>University Honesty Policy</i></strong></p>
+
+<p><span style="font-weight: 400;">UF students are bound by
+The Honor Pledge which states, &ldquo;We, the members of the
+University of Florida community, pledge to hold ourselves
+and our peers to the highest standards of honor and
+integrity by abiding by the Honor Code. On all work
+submitted for credit by students at the University of
+Florida, the following pledge is either required or implied:
+&ldquo;On my honor, I have neither given nor received
+unauthorized aid in doing this assignment.&rdquo; The Honor
+Code (</span><span style="font-weight:
+400;">https://www.dso.ufl.edu/sccr/process/student-conduct-honor-code/</span><span style="font-weight:
+400;">) specifies a number of behaviors that are in
+violation of this code and the possible
+sanctions. Furthermore, you are obligated to report any
+condition that facilitates academic misconduct to
+appropriate personnel. If you have any questions or
+concerns, please consult with the instructor or TAs in this
+class.</span></p>
+
+<p><strong><i>Software Use</i></strong></p>
+
+<p><span style="font-weight: 400;">All faculty, staff and
+student of the University are required and expected to obey
+the laws and legal agreements governing software
+use. Failure to do so can lead to monetary damages and/or
+criminal penalties for the individual violator. Because such
+violations are also against University policies and rules,
+disciplinary action will be taken as appropriate. We, the
+members of the University of Florida community, pledge to
+uphold ourselves and our peers to the highest standards of
+honesty and integrity.</span></p>
+<p><strong><i>Campus Resources:</i></strong></p>
+<p><i><span style="font-weight: 400;">Health and Wellness</span></i></p>
+<p><strong>U Matter, We Care:</strong></p>
+<p><span style="font-weight: 400;">If you or a friend is in distress, please contact </span><span style="font-weight: 400;">umatter@ufl.edu</span> <span style="font-weight: 400;">or 352-392-1575 so that a team member can reach out to the student.</span></p>
+
+<p><strong>Counseling and Wellness
+Center:</strong><a href="http://www.counseling.ufl.edu/cwc"> <span style="font-weight:
+400;">http://www.counseling.ufl.edu/cwc</span></a><span style="font-weight:
+400;">, </span><span style="font-weight: 400;">and
+&nbsp;392-1575; and the University Police Department:
+392-1111 or 9-1-1 for emergencies.</span></p>
+
+<p><strong>Sexual Assault Recovery Services
+(SARS)</strong></p>
+
+<p><span style="font-weight: 400;">Student Health Care Center, 392-1161.</span></p>
+
+<p><strong>University Police
+Department</strong> <span style="font-weight:
+400;">at</span> <span style="font-weight: 400;">392-1111 (or
+9-1-1 for emergencies),
+or</span><a href="http://www.police.ufl.edu/"> <span style="font-weight:
+400;">http://www.police.ufl.edu/</span></a><span style="font-weight:
+400;">.</span></p>
+
+<p><i><span style="font-weight: 400;">Academic Resources</span></i></p>
+
+<p><strong>E-learning technical
+suppor</strong><i><span style="font-weight:
+400;">t</span></i><span style="font-weight: 400;">,
+352-392-4357 (select option 2) or e-mail to
+Learning-support@ufl.edu.</span><a href="https://lss.at.ufl.edu/help.shtml"> <span style="font-weight:
+400;">https://lss.at.ufl.edu/help.shtml</span></a><span style="font-weight:
+400;">.</span></p>
+
+<p><strong>Career Resource
+Center</strong><span style="font-weight: 400;">, Reitz
+Union, 392-1601. &nbsp;Career assistance and
+counseling.</span><a href="https://www.crc.ufl.edu/"> <span style="font-weight:
+400;">https://www.crc.ufl.edu/</span></a><span style="font-weight:
+400;">.</span></p>
+
+<p><strong>Library Support</strong><span style="font-weight:
+400;">,</span><a href="http://cms.uflib.ufl.edu/ask"> <span style="font-weight:
+400;">http://cms.uflib.ufl.edu/ask</span></a><span style="font-weight:
+400;">. Various ways to receive assistance with respect to
+using the libraries or finding resources.</span></p>
+
+<p><strong>Teaching Center</strong><span style="font-weight:
+400;">, Broward Hall, 392-2010 or 392-6420. General study
+skills and
+tutoring.</span><a href="https://teachingcenter.ufl.edu/"> <span style="font-weight:
+400;">https://teachingcenter.ufl.edu/</span></a><span style="font-weight:
+400;">.</span></p>
+
+<p><strong>Writing Studio, 302 Tigert
+Hall</strong><i><span style="font-weight:
+400;">, </span></i><span style="font-weight:
+400;">846-1138. Help brainstorming, formatting, and writing
+papers.</span><a href="https://writing.ufl.edu/writing-studio/"> <span style="font-weight:
+400;">https://writing.ufl.edu/writing-studio/</span></a><span style="font-weight:
+400;">.</span></p>
+
+<p><strong>Student Complaints
+Campus</strong><i><span style="font-weight:
+400;">:</span></i><a href="https://www.dso.ufl.edu/documents/UF_Complaints_policy.pdf"> <span style="font-weight:
+400;">https://www.dso.ufl.edu/documents/UF_Complaints_policy.pdf</span></a><span style="font-weight:
+400;">.</span></p>
+
+<p><strong>On-Line Students
+Complaints</strong><i><span style="font-weight:
+400;">:</span></i><a href="http://www.distance.ufl.edu/student-complaint-process"> <span style="font-weight:
+400;">http://www.distance.ufl.edu/student-complaint-process</span></a><span style="font-weight:
+400;">.</span></p>
+<p>&nbsp;</p>

@@ -1,0 +1,94 @@
+<html>
+
+<head>
+  <title>A Flexible Architecture for Systematic Implementation of SoC Security Policies</title>
+</head>
+
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>A Flexible Architecture for Systematic Implementation of
+SoC Security Policies</H1>
+
+<big>
+A. Basak,
+<a href="http://engr.case.edu/bhunia_swarup/">S. Bhunia</a>
+and <a href="http://www.cs.utexas.edu/~sandip">S. Ray</a>
+</big> <br><br>
+
+To Appear
+  In <a href="http://users.ece.cmu.edu/~dianam/">D. Marculescu</a>,
+  <a href="http://researcher.ibm.com/researcher/view.php?person=us-frankliu">F. Liu</a>,
+  and <a href="http://www.cse.unsw.edu.au/~sridevan/">S. Parameswaran</a>
+  editors, <a href="http://iccad.com">34th International
+  Conference on Computer-Aided Design (ICCAD 2015)</a>,
+  Austin, TX, USA, November
+  2015.  <a href="http://www.ieee.org">IEEE</a>.
+<br><br> 
+
+<small> &copy; 2015 IEEE. Personal use of this material is
+permitted. However, permission to reprint/republish this
+material for advertising or promotional purposes or for
+creating new collective works for resale or redistribution
+to servers or lists, or to reuse any copyrighted component
+of this work in other works must be obtained from the
+IEEE.  </small>
+
+<br><br> 
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+Modern SoC designs incorporate several security policies to
+protect sensitive assets from unauthorized access.  The
+policies affect multiple design blocks, and may involve
+subtle interactions between hardware, firmware, and
+software.  This makes it difficult for SoC designers to
+implement these policies, and system validators to ensure
+adherence.  Associated problems include complexity in
+upgrading these policies, IP reuse for systems targeted for
+markets with differing security requirement, and consequent
+increase in design time and time-to-market.  In this paper,
+we address this important problem by developing a generic,
+flexible architectural framework for implementing arbitrary
+security policies in a SoC designs.  Our architecture has
+several distinctive features: (1) it relies on a dedicated,
+<b>centralized</b>, <b>firmware-upgardable</b> plug-and-play
+IP block that can implement diverse security policies; (2)
+it interfaces with individual IP blocks through their
+"security wrapper", which exploits and extends test/debug
+wrappers; (3) it implements a security policy as firmware
+code following exisitng security policy languages; (4) it
+can implement any security policy as long as relevant
+oberservable and controllable signals from the constituent
+IPs are acessible through the security wrappers; and (5) it
+realizes a low-overhead communication link between security
+wrappers of IP blocks and the centralized, dedicated
+controller. The approach builds on and extends the recent
+work on developing a centralized infrastructure IP for SoC
+security, referred to as IIPS, that interface with IP blocks
+using their boundary scan based wrappers.  While this
+architecture is generic and independent of security policy
+types, we provide case studies with several common policies
+to show the flexibility and extendibility of the
+architecture.  We also evaluate its viability in terms of
+overhead in area and power.
+
+<H2>Relevant files</H2>
+
+<ul>
+ <li><a href="iccad15b.pdf">Paper</a> </li>
+
+ </ul>
+
+<br>
+
+</body>
+</html>
+

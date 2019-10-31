@@ -1,0 +1,87 @@
+<html>
+<head>
+  <title>Proof Styles in Operational Semantics</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Proof Styles in Operational Semantics</H1>
+
+<big><a href="http://www.cs.utexas.edu/~sandip">S. Ray</a> and <a
+href="http://www.cs.utexas.edu/~moore">J S. Moore</a> </big><br><br>
+
+In <a href="http://www.cs.ubc.ca/spider/ajh/">A. J. Hu</a> and
+A. K. Martin, editors, Proceedings of the <a
+href="http://www.fmcad.org/2004">5th International Conference on
+Formal Methods in Computer-aided Design (FMCAD 2004)</a>, Austin, TX,
+November 2004, volume 3312 of <a
+href="http://www.springer.de/comp/lncs/index.html">LNCS</a>, pages
+67-81.  <a href="http://www.springer.com">Springer</a>.  <br><br>
+
+<small> &copy; <a
+href="http://www.springer.de/comp/lncs/index.html">Springer-Verlag</a> Berlin
+Heidelberg 2004.</small> 
+
+<br><br> 
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We relate two well-studied methodologies in deductive verification of
+operationally modeled sequential programs, namely the use of <span
+style="font-style: italic;">inductive invariants</span> and <span
+style="font-style: italic;">clock functions</span>.  We prove that the two
+methodologies are equivalent in the following sense: If the logic used is
+sufficiently expressive then one can mechanically transform a proof of a
+program in one methodology to a proof in the other. Both partial and total
+correctness are considered. We also show that the mechanical transformation is
+compositional in that different parts of a program can be verified using
+different methodologies to achieve a complete proof of the entire program. Our
+proof of equivalence has been mechanically verified by the ACL2 theorem prover
+and we discuss automatic tools in the form of ACL2 macros to carry out the
+transformation between the two methodologies in the ACL2 system.
+
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="proof-styles.ps">ps</a>, <a
+ href="proof-styles.pdf">pdf</a>)</li>
+
+   <li>Slides for FMCAD 2004 (<a href="slides.ps">ps</a>, <a
+ href="slides.pdf">pdf</a>)</li>
+
+   <li><span style="font-weight:bold">Supporting ACL2 proof
+ scripts:</span> See the directory <code>books/proofstyles/invclock/</code> in
+ the current ACL2 distribution. </li>
+</ul>
+
+<br>
+
+<H2>BibTex</H2>
+
+<pre>
+@Inproceedings{ray-proof,
+  author    = "S. Ray and J S. Moore",
+  title     = "{Proof Styles in Operational Semantics}",
+  editor    = "A. J. Hu and A. K. Martin",
+  booktitle = "{Proceedings of the $5$th International Conference on 
+                Formal Methods in Computer-Aided Design (FMCAD 2004)}",
+  series    = "{LNCS}",
+  volume    = "3312",
+  address   = "{Austin, TX}",
+  publisher = "{Springer}",
+  month     = nov,
+  pages     = "67-81",
+  year      = 2004
+}
+</pre>
+
+</body>
+</html>
+

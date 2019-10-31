@@ -1,0 +1,80 @@
+<html>
+<head>
+  <title>In-Place Quicksort</title>
+  <meta name="author" content="Sandip Ray">
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Verification of an In-place Quicksort in ACL2</H1>
+
+
+<big> <a href="http://www.cs.utexas.edu/~sandip">S. Ray</a> and
+R. Sumners </big><br><br>
+
+In <a href="http://tima.imag.fr/VDS/PPerso/PageDBorrione.html">D. Borrione</a>,
+<a href="http://www.cs.utexas.edu/~kaufmann">M. Kaufmann</a>, and <a
+href="http://www.cs.utexas.edu/~moore">J S. Moore</a>, editors, Proceedings of
+the <a href="http://www.cs.utexas.edu/~moore/acl2/workshop-2002/">3rd
+International Workshop on the ACL2 Theorem Prover and Its Applications (ACL2
+2002)</a>, Grenoble, France, April 2002, pages 204-212<br> <br>
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We present a proof of an efficient, in-place
+Quicksort implementation using single-threaded objects (stobjs) in
+ACL2. We demonstrate that the Quicksort implementation is equivalent to
+a simple insertion-sort function that is shown to produce an ordered
+permutation of its input. For ease of reasoning, the demonstration is
+carried out by verifying a series of "intermediate" sorting functions.
+The intermediate functions are equivalent to the efficient Quicksort
+implementation, but written in a more applicative style, and hence
+easier to reason about. We then decompose the proof into a verification
+of the equivalence of the efficient implementation with an intermediate
+implementation, and a proof of correctness of the intermediate
+implementation. We show how this decomposition allows us to simplify
+our reasoning about stobjs and obtain a cleaner proof of the
+implementation.
+
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="qs.ps">ps</a>, <a href="qs.pdf">pdf</a>)</li>
+
+  <li>Slides for ACL2 2002 (<a href="slides.ps">ps</a>, <a
+ href="slides.pdf">pdf</a>)</li>
+
+<li> <span style="font-weight:bold">Supporting materials:</span> See
+ the directory <code>books/workshops/2002/ray-sumners/support/</code>
+ in the current ACL2 distribution</a>. (<span
+ style="color:blue">Note:</span> You need the workshops tarball. See
+ the instructions for installing ACL2 in the <a
+ href="http://www.cs.utexas.edu/~moore/acl2">ACL2 homepage</a>.) </li> 
+</ul> 
+<br>
+
+<h2>BibTex</h2>
+
+<pre>
+@Inproceedings{ray-verification,
+  title     = "{Verification of an In-place Quicksort in ACL2}",
+  author    = "S. Ray and R. Sumners",
+  editor    = "D. Borrione and M. Kaufmann and J S. Moore",
+  booktitle = "{$3$rd International Workshop on the ACL2 Theorem Prover and Its Applications
+                (ACL2 2002)}",
+  address   = "{Grenoble, France}",
+  pages     = "204-212",
+  month     = apr,
+  year      = "2002"
+}
+</pre>
+
+</body>
+</html>

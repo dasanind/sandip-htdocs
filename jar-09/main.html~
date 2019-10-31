@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>
+The Right Tools for the Job: Correctness of
+Cone of Influence Reduction Proved Using ACL2 and HOL4
+</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>
+The Right Tools for the Job: Correctness of
+Cone of Influence Reduction Proved Using ACL2 and HOL4
+</H1>
+
+<big><a href="http://www.cl.cam.ac.uk/~mjcg">M. J. C. Gordon</a>, <a
+href="http://www.cs.utexas.edu/~kaufmann">M. Kaufmann</a>, and <a
+href="http://www.cs.utexas.edu/~sandip">S. Ray</a></big> <br><br>
+
+To Appear in <a
+href="http://www.springerlink.com/content/100280/">Journal of
+Automated Reasoning</a>.  <a
+href="http://www.springer.com">Springer</a>.  <br><br>
+
+<small> &copy; 2010 <a
+href="http://www.springer.com">Springer</a>.  </small>
+
+<br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We present a case study illustrating how to exploit the expressive
+power of higher-order logic to complete a proof whose main lemma is
+already proved in a first-order theorem prover.  Our proof exploits a
+link between the HOL4 and ACL2 proof systems to show correctness of a
+cone of influence reduction algorithm, implemented in ACL2, with
+respect to the classical semantics of linear temporal logic,
+formalized in HOL4.
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="ltl-hol-acl2.ps">ps</a>, <a href="ltl-hol-acl2.pdf">pdf</a>)</li>
+
+ <li><a
+ href="http://hol.svn.sourceforge.net/viewvc/hol/HOL/examples/acl2/examples/acl2-hol-ltl-paper-example/">Supporting
+ Proof Scripts</a> </li>
+</ul>
+
+<br>
+
+
+</body>
+</html>
+

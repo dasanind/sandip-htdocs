@@ -1,0 +1,61 @@
+<html>
+<head>
+  <title>Abstraction as a Practical Debugging Tool</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Abstraction as a Practical Debugging Tool</H1>
+
+<big>
+<a href="http://www.cs.utexas.edu/~sandip">S. Ray</a> </big> <br><br>
+
+In M. S. Abadir, <a
+href="http://mtv.ece.ucsb.edu/licwang/">L. Wang</a>, and <a
+href="http://www.cerc.utexas.edu/~jay">J. Bhadra</a>, editors,
+Proceedings of the <a href="http://mtv.ece.ucsb.edu/MTV/">9th
+International Workshop on Microprocessor Test and Verification, Common
+Challenges and Solutions (MTV 2008)</a>, Austin, TX, December 2008.
+<a href="http://www.computer.org/portal/site/ieeecs">IEEE Computer
+Society</a>
+
+<!-- <br><br>  -->
+
+<!-- <small> &copy; 2008 <a href="http://www.ieee.org">IEEE</a>.  Personal use of this -->
+<!-- material is permitted.  However, permission to reprint/republish this material -->
+<!-- for advertising or promotional purposes or for creating new collective works -->
+<!-- for resale or redistribution to servers or lists, or to reuse any copyrighted -->
+<!-- component of this work in other works must be obtained from the IEEE.  </small> -->
+
+<br><br>
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We present a procedure for computing abstractions of RTL designs.  The
+procedure is guaranteed to always produce a conservative abstraction,
+while providing the flexibility to generate different amounts of
+abstractions.  The procedure meets the orthogonal abstraction needs of
+simulation and formal state exploration.  It has been implemented in
+the ACL2 theorem prover, and used in the verification of a large
+number of RTL modules.
+
+<H2>Relevant files</H2>
+
+
+<ul>
+  <li>Extended Abstract (<a href="rtl-abstract.ps">ps</a>, <a
+ href="rtl-abstract.pdf">pdf</a>)</li>
+
+</ul>
+
+
+
+</body>
+</html>

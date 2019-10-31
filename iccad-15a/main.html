@@ -1,0 +1,83 @@
+<html>
+
+<head>
+  <title>Can't See the Forest for Trees: State Restoration's
+  Limitations in Post-silicon Trace Signal Selection</title>
+</head>
+
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Can't See the Forest for Trees: State Restoration's
+  Limitations in Post-silicon Trace Signal Selection</H1>
+
+<big>
+S. Ma, <a href="http://web.engr.illinois.edu/~dpal2/">D. Pal</a>,
+R. Jiang, <a href="http://www.cs.utexas.edu/~sandip">S. Ray</a>, 
+ and <a href="http://faculty.ece.illinois.edu/shobhav/">S. Vasudevan</a>
+</big> <br><br>
+
+In <a href="http://users.ece.cmu.edu/~dianam/">D. Marculescu</a>,
+  <a href="http://researcher.ibm.com/researcher/view.php?person=us-frankliu">F. Liu</a>,
+  and <a href="http://www.cse.unsw.edu.au/~sridevan/">S. Parameswaran</a>
+  editors, <a href="http://iccad.com">34th International
+  Conference on Computer-Aided Design (ICCAD 2015)</a>,
+  Austin, TX, USA, November 2015, pages
+  1-8.  <a href="http://www.ieee.org">IEEE</a>.
+<br><br> 
+
+<small> &copy; 2015 IEEE. Personal use of this material is
+permitted. However, permission to reprint/republish this
+material for advertising or promotional purposes or for
+creating new collective works for resale or redistribution
+to servers or lists, or to reuse any copyrighted component
+of this work in other works must be obtained from the
+IEEE.  </small>
+
+<br><br> 
+
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+Restoration Ratio (SRR) has been the de facto standard for
+evaluating quality of signals selected for post-silicon
+tracing and debug.  Given a set <i><b>S</b></i> of selected
+signals, SRR measures the fraction of (gate-level) design
+states that can be inferred from observing signals in
+<i><b>S</b></i> at each cycle.  Unfortunately, in spite of
+its widespread use, we found that SRR is intrinsically
+unsuitable as a metric for evaluating trace signal quality,
+as it captures neither the higher-level functionality of the
+design nor the constraints and requirements on trace signals
+imposed by architectural, physical, or security
+requirements.  In this paper, we argue with strong empirical
+evidence that SRR must be replaced by a metric that closely
+models high-level behavioral coverage.  We propose assertion
+coverage as a first step in this direction.  We also present
+a new algorithm, based on Pagerank, for post-silicon trace
+selection.  Pagerank is <i>not</i> designed to maximize SRR.
+We found that Pagerank has upto 70% higher behavioral
+coverage than SRR optimizing methods, and the RTL PageRank
+has upto 30% higher behavioral coverage than the netlist
+PageRank algorithm.  Assertion coverage of PageRank RTL is
+upto 50% while SRR based methods have less than 5%
+assertion coverage.
+
+<H2>Relevant files</H2>
+
+<ul>
+ <li><a href="iccad15a.pdf">Paper</a> </li>
+
+ </ul>
+
+<br>
+
+</body>
+</html>
+

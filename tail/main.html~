@@ -1,0 +1,89 @@
+<html>
+<head>
+  <title>Quantification in Tail-recursive Function Definitions</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Quantification in Tail-recursive Function Definitions</H1>
+
+<big> <a href="http://www.cs.utexas.edu/~sandip">S. Ray</a>
+</big><br><br>
+
+In <a href="http://www.cc.gatech.edu/~manolios">P. Manolios</a> and <a
+href="http://www.hokiepokie.org">M. Wilding</a>, editors, <a
+href="http://www.lulu.com/content/380599">Proceedings</a> of the <a
+href="http://www-static.cc.gatech.edu/~manolios/acl206/">6th
+International Workshop on the ACL2 Theorem Prover and Its Applications
+(ACL2 2006)</a>, Seattle, WA, August 2006, volume 205 of ACM
+International Conference Proceeding Series, pages 95-98.  <a
+href="http://www.acm.org">ACM</a>
+
+<br>
+<br> 
+<small> &copy; 2006 ACL2 Steering Committee 0-9788493-0-2/06/08.
+</small>
+<br>
+<br>
+
+<hr style="width: 100%; height: 2px;">
+
+
+
+<H2>Abstract</H2>
+
+We investigate the logical issues behind axiomatizing equations that contain
+both recursive calls and quantifiers in ACL2. We identify a class of such
+equations, named  <span style="font-style:italic">extended tail-recursive
+equations</span>, that can be uniformly
+introduced in the logic. We point out some potential benefits of this
+axiomatization, and discuss the logical impediments behind introducing more
+general quantified formulas.
+
+<H2>Relevant files</H2> 
+
+<ul> 
+
+  <li>Paper preprint (<a href="tail.ps">ps</a>, <a
+href="tail.pdf">pdf</a>)</li>
+
+  <li>Slides for ACL2 2006 (<a href="slide.ps">ps</a>, <a
+ href="slide.pdf">pdf</a>)</li>
+
+ <li><span style="font-weight:bold">Supporting materials:</span> See
+ the directory <code>books/workshops/2006/ray/support/</code> in the
+ current ACL2 distribution</a>. (<span style="color:blue">Note:</span>
+ You need the workshops tarball. See the instructions for installing
+ ACL2 in the <a href="http://www.cs.utexas.edu/~moore/acl2">ACL2
+ homepage</a>.)</li>
+
+</ul> 
+
+<br>
+
+<h2>BibTex</h2>
+
+<pre>
+@Inproceedings{ray-quantification,
+  author    = "S. Ray",
+  title     = "{Quantification in Tail-recursive Function Definitions}",
+  editor    = "P. Manolios and M. Wilding",
+  booktitle = "{Proceedings of the $6$th International Workshop on the ACL2
+                Theorem Prover and Its Applications (ACL2 2006)}",
+  address   = "{Seattle, WA}",
+  series    = "ACM International Conference Series",
+  volume    = "205",
+  month     = aug,
+  pages     = "95-98",
+  year      = 2006,
+  publisher = "ACM"
+}
+</pre>
+
+</body>
+</html>
+

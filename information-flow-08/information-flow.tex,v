@@ -1,0 +1,892 @@
+head	1.4;
+access;
+symbols;
+locks
+	sandip:1.4; strict;
+comment	@% @;
+
+
+1.4
+date	2008.08.12.18.40.14;	author rkrug;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.08.12.17.11.56;	author rkrug;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.08.12.07.40.03;	author sandip;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.08.12.07.29.01;	author sandip;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@More minor edits, prompted by Bill.
+@
+text
+@\documentclass[conference]{IEEEtran}
+\usepackage{epsfig,amsmath,amssymb}
+\usepackage{acl2}
+\newcommand{\proc}[1]{\ifmmode\mbox{\textsc{#1}}\else\textsc{#1}\fi}
+\newcommand{\func}[1]{\ensuremath{\mbox{{\sf {\em #1}}}}}
+\newcommand{\id}[1]{\ifmmode\mathit{#1}\else\textit{#1}\fi}
+\newcommand{\naturals}{{\mathrm{I}\!\mathrm{N}}}
+\renewcommand{\cases}[1]{\ensuremath{\left\{\begin{array}{ll}#1\end{array}\right.}}
+
+\begin{document}
+
+\title{Mechanized Information Flow Analysis through Inductive Assertions}
+
+\author{
+\authorblockN{Warren A. Hunt, Jr., Robert Bellarmine Krug, Sandip Ray, and William D. Young} 
+\authorblockA{
+Department of Computer Sciences \\
+University of Texas at Austin \\
+{\sf \{hunt,rkrug,sandip,byoung\} @@cs.utexas.edu}}
+}
+
+
+% From http://es.fbk.eu/events/fmcad08/cfp.html:
+% ... short papers (4 pages), describing applications, case studies, industrial
+% experience reports, emerging results, or implemented tools with novel features.
+
+\maketitle
+
+%% Abstract
+\begin{abstract}
+
+We present a method for verifying information flow properties of
+software programs using inductive assertions and theorem proving.
+Given a program annotated with information flow assertions at
+cutpoints, the method uses a theorem prover and operational semantics
+to generate and discharge verification conditions.  This obviates the
+need to develop a verification condition generator (VCG) or a
+customized logic for information flow properties.  The method is
+compositional: a subroutine needs to be analyzed once, rather than at
+each call site.  The method is being mechanized in the ACL2 theorem
+prover, and we discuss initial results demonstrating its
+applicability.
+
+\end{abstract}
+
+% Sections
+
+\section{Introduction}
+\label{sec:intro}
+
+Security of many critical computing systems depends on {\em
+information flow policies} that prohibit access to sensitive
+information without proper authorization.  With the increasing
+application of software systems to secure applications, it is vital
+to ensure that a software implementation properly enforces information
+flow policies.  The goal of this paper is to develop techniques for
+mechanized information flow analysis.
+
+In its simplest form, modeling an information flow policy involves
+labeling certain program variables as classified (or high security),
+with the requirement that the value of an unclassified variable is not
+influenced by the initial values of any classified variable.  Such a
+policy can be formalized by {\em noninterference}~\cite{goguen82}.  A
+deterministic program satisfies the policy if, from a pair of initial
+states differing only in classified variables, any pair of
+computations leads to final states with identical values for
+unclassified variables.  Noninterference naturally generalizes to a
+lattice of security levels.
+
+This paper proposes a method for verifying information flow properties
+of software programs through general-purpose theorem proving.
+Programs are formalized through an {\em operational semantics} of the
+underlying language defined by an interpreter that specifies the
+effect of executing instructions on the system state.  Our approach
+uses {\em inductive assertions}.  Given a program annotated with
+assertions at cutpoints, we derive {\em verification conditions} that
+ensure requisite information flow control, to be discharged with a
+theorem prover.
+
+A key feature of our approach is that it obviates the need for
+implementing a custom verification condition generator (VCG) for
+information flow properties of the underlying language constructs.
+Instead, we show how to configure an off-the-shelf theorem prover to
+{\em mimic} a VCG through symbolic simulation of the operational
+model.  The method is inspired by, and an extension of, our previous
+work~\cite{symbolic} which showed how to prove functional correctness
+via symbolic simulation.  The method is compositional; properties of
+subroutines can be verified individually rather than at each call
+site.  We demonstrate the method by analyzing a small but illustrative
+program with the ACL2 theorem prover.
+
+\section{Basic Framework}
+\label{sec:basic-framework}
+
+We use operational semantics to model a
+program by its effects on the machine states.  A
+state is a tuple of values of all machine variables---the program
+counter (pc), registers, memory, etc.  The semantics is then given by
+a transition function $\func{next}:S\rightarrow S$ where $S$ is the
+set of states: for a state $s$, $\func{next}\,(s)$ returns the state
+after executing one instruction from $s$.  Executions are modeled by
+the function $\func{run}:S\times\naturals\rightarrow S$ which returns
+the state after $n$ transitions from $s$.
+
+\[
+\func{run}\,(s,n)
+\triangleq
+\cases{
+        s                              & \mbox{if $n=0$} \\
+        \func{run}\,(\func{next}\,(s),n-1) & \mbox{otherwise} 
+      }
+\]
+
+To illustrate how to formally specify information flow properties of
+programs using operational semantics, we consider the simple version
+of noninterference mentioned in Section~\ref{sec:intro}.  Assume a
+partition of the variables into sets $H$ (high) and $L$ (low),
+corresponding to classified and unclassified data.  Furthermore,
+assume that we have two predicates \func{poise} and \func{exit} on
+set $S$.  For any state $s$, $\func{poise}\,(s)$ stipulates that $s$
+is poised to initiate execution of the program of interest: it
+specifies that the program is in the current call frame and the pc
+points to its first instruction.  The predicate \func{exit}
+characterizes the termination states.  To formalize the
+noninterference statement, we make use of the function \func{esteps}
+below, which returns, for any state $s$, the number of transitions to
+the first \func{exit} state reachable from $s$ (if such an \func{exit}
+state exists).
+
+\[
+\begin{array}{l}
+\func{estpt}\,(s,i)
+\triangleq
+\cases{
+        i                              & \mbox{if $\func{exit}\,(s)$} \\
+        \func{estpt}\,(\func{next}\,(s), i+1) & \mbox{otherwise} 
+      }
+\\
+\func{esteps}(s) \triangleq\func{estpt}(s,0)
+\end{array}
+\]
+
+\noindent
+The definition of \func{estept} is {\em partial}: its return value is
+unspecified if no \func{exit} state is reachable from $s$.  Defining a
+recursive function generally requires a termination proof.  However,
+since the definition is tail-recursive, it is admissible in theorem
+provers whose logics support Hilbert's choice
+operator~\cite{jar:defpun}.
+
+A formalization of noninterference is shown in
+Fig.~\ref{fig:noninterference},
+\begin{figure}
+\begin{center}
+\fbox{
+\begin{minipage}{3.3in}
+\begin{math}
+\begin{array}{l}
+\func{pre}\,(s,s') \triangleq \func{poise}\,(s)\wedge \func{poise}\,(s')\wedge (\bigwedge_{l\in L} l(s)=l(s')) \\
+\func{post}\,(s,s')  \triangleq  (\bigwedge_{l\in L} l(s)=l(s')) \\
+\func{nexte}(s) \triangleq \func{run}(s,\func{esteps}(s))
+\end{array}
+\end{math}
+
+\vspace*{4pt}
+
+\mbox{{\bf Noninterference Condition:}}  
+
+$\hspace*{.3cm} \func{pre}\,(s,s')\wedge\func{exit}\,(\func{run}\,(s,n)) \\
+ \Rightarrow\func{exit}\,(\func{nexte}(s')) \wedge
+                \func{post}\,(\func{nexte}\,(s),\func{nexte}\,(s'))$
+\end{minipage}
+}
+\end{center}
+\caption{Formal Definition of Noninterference.  Here $l(s)$ is assumed
+to be the value of variable $l$ in state $s$.}
+\label{fig:noninterference}
+\end{figure}
+and can be paraphrased as follows.  ``Let $s$ and $s'$ be any two
+states poised to execute the program, such that the variables in $L$
+have the same valuation in both $s$ and $s'$.  Suppose that there is
+an \func{exit} state reachable from $s$.  Then the following
+conditions hold.  (1)~There is an \func{exit} state reachable from
+$s'$.  (2) Let $s_0$ and $s_0'$ be the first \func{exit} states
+reachable from $s$ and $s'$ respectively; then $s_0$ and $s_0'$ have
+the same valuation for all variables in $L$.'' 
+
+Note that the statement of a practical information flow property might
+differ from the above.  For instance, one might have a lattice of security
+levels.  Or one might be interested only in a subset $L'\subseteq L$
+at \func{exit}; then the conjunction in the definition of
+$\func{post}$ would range over $L'$.  Nevertheless, such concerns
+affect only the concrete definitions of \func{pre} and \func{post};
+once they have been defined for the desired information flow
+requirements, the noninterference statement can be used as is.
+
+Our approach is based on {\em inductive assertions} which involve
+annotating a program with assertions at cutpoints that include loop
+tests, program entry, and exit.  For our purpose, the set of cutpoints
+is characterized by a predicate \func{cut} on $S$, commonly depending
+only on the pc.  One then proves that whenever the program control
+reaches a cutpoint, the corresponding assertion holds.  For functional
+correctness, this is achieved by a VCG as follows.  A VCG crawls over
+an annotated program, generating verification conditions to be
+discharged by theorem proving.  The guarantee from the VCG process is
+informally stated as follows.  ``Let $p$ be any non-exit cutpoint
+satisfying the assertions.  Let $q$ be the next subsequent cutpoint.
+Then the assertions hold at $q$.''  It follows that the corresponding
+assertion holds whenever the program control reaches a cutpoint.
+
+How do we extend the above for information flow properties?  Since
+information flow is characterized by {\em pairs of states}, the
+assertions involved are formalized by a predicate $\func{assert}$ over
+$S\times S$.  The associated VCG guarantee is as follows.  ``Let $p$
+and $p'$ be any two corresponding non-exit cutpoints of the program
+such that $\func{assert}\,(p,p')$ holds.  (See below for an
+explanation of the role of ``corresponding cutpoints.'')  Let $q$ and
+$q'$ be the next cutpoints from $p$ and $p'$ respectively.  Then
+$\func{assert}\,(q,q')$ holds.''  Then, if additionally,
+(1)~\func{assert} holds for the initial pair of states, and (2)~for
+the pair of \func{exit} states \func{assert} implies \func{post}, it
+follows that the pair of \func{exit} states reachable from any pair of
+initial states satisfies \func{post}.
+
+The formal verification conditions for information flow are shown in
+Fig.~\ref{fig:vcg}.
+\begin{figure}
+\fbox{
+\begin{minipage}{3.3in}
+\begin{math}
+\begin{array}{l}
+\func{cstpt}\,(s,i)
+\triangleq
+\cases{i                             & \mbox{if $\func{cut}\,(s)$} \\
+        \func{nextc}\,(\func{next}\,(s,i+1)) & \mbox{otherwise} 
+      } \\
+\func{cstps}(s) \triangleq
+\cases{\func{cstpt}\,(s,0)                          & \mbox{if $\func{cut}\,(\func{run}(s,\func{cstpt}(s,0)))$} \\
+        \omega & \mbox{otherwise} 
+      } \\
+\func{cut}(D)\Leftrightarrow(\forall s: \func{cut}(s)) \\
+\func{nextc}(s)
+\triangleq\cases{\func{run}(s,\func{cstps}\,(s)) & \mbox{if $\func{cut}\,(\func{run}\,(s,\func{cstps}(s)))$} \\
+        $D$ & \mbox{otherwise} 
+      }
+\end{array}
+\end{math}
+
+
+\vspace*{4pt}
+
+\mbox{{\bf Verification Conditions}}  
+
+\vspace*{1pt}
+
+\begin{math}
+\begin{array}{ll}
+
+1. & \func{C}\,(s,s')\Rightarrow\func{cut}\,(s) \wedge \func{cut}\,(s') \wedge (\func{exit}\,(s)\Leftrightarrow\func{exit}\,(s'))\\
+2. & \func{pre}\,(s,s')\Rightarrow\func{C}\,(s,s') \wedge \func{assert}\,(s,s')\\
+3. & \func{exit}\,(s) \Rightarrow \func{cut}\,(s) \\
+4. & \func{C}\,(s,s')\wedge\func{assert}\,(s,s')\wedge\neg\func{exit}\,(s) \wedge\func{exit}\,(\func{run}\,(s,n))\\
+& \Rightarrow\func{assert}\,(\func{nextc}\,(\func{next}\,(s)),\func{nextc}\,(\func{next}\,(s'))) \\
+5. & \func{C}\,(s,s')\wedge\func{assert}\,(s,s') \wedge\neg\func{exit}\,(s) \wedge\func{exit}\,(\func{run}\,(s,n)) \\
+& \Rightarrow\func{C}\,(\func{nextc}\,(\func{next}\,(s)),\func{nextc}\,(\func{next}\,(s'))) \\
+6. & \func{assert}\,(s,s')\wedge\func{exit}\,(s)\wedge\func{C}\,(s,s')\Rightarrow\func{post}\,(s,s') 
+\end{array}
+\end{math}
+\end{minipage}
+}
+\caption{Verification conditions for information flow.  The partial
+function $\func{nextc}\,(s)$ returns first cutpoint reachable from $s$,
+if such a cutpoint exists.  Each verification condition is implicitly
+quantified over all free variables.}
+\label{fig:vcg}
+\end{figure}
+Condition~$4$ formalizes the VCG guarantee.  We now discuss the
+predicate \func{C}, which formalizes the notion of ``corresponding
+cutpoints.''  Recall that the VCG guarantee specifies that when
+\func{assert} holds between a pair of cutpoints then it also holds for
+the subsequent pair.  However, the next subsequent cutpoints might be
+out of sync.  For instance, computation might exit from $p$ and not
+from $p'$; thus the information flow theorem cannot be derived from
+the VCG guarantee.  The predicate \func{C} eliminates this possibility
+by requiring the following: (1)~if $\func{pre}\,(s,s')$ holds then $s$
+and $s'$ must be corresponding; (2)~for any two corresponding
+cutpoints, the subsequent cutpoint pair must be corresponding; and
+(3)~if $s$ satisfies \func{exit} and $s'$ is a corresponding cutpoint,
+then $s'$ must also satisfy \func{exit}.  We assume that there is a
+binary predicate \func{C} on $S\times S$ characterizing the
+corresponding cutpoints; in practice, the definition of
+$\func{C}\,(s,s')$ will usually reduce to the condition that the pc
+values for $s$ and $s'$ are equal.
+
+Conditions $4$ and $5$ involve multiple steps of program execution.
+Contrary to common practice, we discharge them {\em without a VCG} as
+follows.  We prove the following two theorems, which are easy
+consequences of the definition of \func{nextc}:
+\begin{description}
+\item[SSR1:] 
+$\neg\func{cut}(s)\Rightarrow\func{nextc}(s)=\func{nextc}(\func{next}(s))$
+\item[SSR2:] $\func{cut}(s)\Rightarrow\func{nextc}(s)=s$
+\end{description}
+We treat SSR1 and SSR2 as oriented conditional equations or {\em
+rewrite rules}.  For any symbolic state $s$, the rules rewrite the
+term $\func{nextc}\,(s)$ to either $s$ or
+$\func{nextc}\,(\func{next}\,(s))$; in the latter case the definition
+of \func{next} is symbolically expanded, simplified, and the rules
+applied again.  The proof attempt causes the theorem prover to
+symbolically simulate the program from a cutpoint until the next
+cutpoint is reached; the process mimics a forward VCG.  For symbolic
+simulation to terminate, each program loop must contain a cutpoint, as
+with traditional VCGs.
+
+We briefly remark how we automate the method suggested above in ACL2.
+The derivation of noninterference from Conditions~$1$ through $6$ is
+independent of the definitions of \func{pre}, \func{post}, etc.  This
+allows the development of a {\em proof template} for generating the
+verification conditions as follows.  First, we introduce functions
+\func{pre}, \func{post}, \func{cut}, \func{assert}, \func{C}, and
+\func{next} constrained to satisfy Conditions~$1$ through $6$, and
+prove the noninterference theorem for these constrained functions.  We
+can then implement an ACL2 macro that automates the information flow
+proofs as follows:
+\begin{itemize}
+\item Mechanically generate the concrete version of \func{nextc}.
+\item Establish conditions~$1$--$6$ for the concrete versions of \func{pre},
+\func{post}, etc., using symbolic
+simulation.
+\item Derive the information flow theorem by functionally
+instantiating the generic version.
+\end{itemize}
+We have developed a corresponding proof template for (partial and
+total) functional correctness~\cite{symbolic}.  We are working on
+extending the template for information flow properties.  
+
+
+\section{A ``Tricky'' Example}
+\label{sec:tricky}
+
+Our approach, although extremely simple, nevertheless provides a
+scalable framework for information flow analysis.  One key strength is
+the ability to use expressive predicates for proving information flow
+theorems: if an information flow property depends on functional
+invariants of the system state, then assertions can easily account for
+such invariants.  This is in stark contrast to traditional security
+type systems for information flow verification, which depend on the
+syntactic analysis of the program to deduce information
+flow~\cite{sm}.
+
+As an illustrative application, consider the simple program shown in
+Fig.~\ref{fig:tricky}.
+\begin{figure}
+\begin{center}
+\fbox{
+\begin{minipage}{3.0in}
+\input{tricky1}
+\end{minipage}
+}
+\end{center}
+\caption{Pseudo-code for the Tricky Program.  Variable {\tt out} is
+incremented by {\tt temp} only when {\tt i} is even, and {\tt temp} is
+equal to {\tt low} in that case.  Thus, the final value of {\tt out}
+is independent of {\tt high}.}
+\label{fig:tricky}
+\end{figure}
+The information flow specification for the program is that the final
+value of {\tt out} depends only on the initial values of {\tt low} and {\tt n}.
+The program is adapted from one in a recent paper by Amtoft and
+Banerjee~\cite{tricky}\footnote{The difference between Amtoft and
+Banerjee's program and that shown in Fig.~\ref{fig:tricky} is that the
+former involved $7$ iterations of {\tt i} in the loop while we use
+{\tt n} iterations.  Note that if the number of loop iterations is
+constant then the loop can be unrolled by symbolic simulation, thus
+obviating any loop invariant.}  which, although simple, was motivated
+by an actual program used in operational verification of hardware
+amplifiers provided by Rockwell-Collins.  The information flow
+property depends on a key observation: whenever the value of {\tt out}
+is incremented by {\tt temp}, the value of {\tt i} is even and the
+value of {\tt temp} is equal to {\tt low}; thus the final value of
+{\tt out} is dependent only on {\tt low} (and the loop count {\tt n}).
+The property cannot be inferred by type reasoning which would
+infer dependence of {\tt temp} on {\tt high} and {\tt out} on {\tt
+temp}.
+
+We formalized this program through an operational semantics of a
+simple machine model, and proved the above information flow
+specification using inductive assertions.  For instance, the
+precondition stipulates that $s$ and $s'$ are poised to execute the
+program and the values of {\tt low}, {\tt n}, and {\tt out} are the same
+in both states; the postcondition specifies that the value of {\tt
+out} is the same after exiting the program.  The only ``creative''
+assertion involved is in the loop invariant.  In addition to the
+boiler-plate assertion that the values of {\tt low}, {\tt n}, {\tt
+out}, and {\tt i} are the same in $s$ and $s'$, we need the condition
+that if {\tt i} is even $s$ and $s'$ have the same value of {\tt
+temp}.  With this assertion, the verification conditions shown in
+Fig.~\ref{fig:vcg} are
+generated and easily verified through symbolic simulation.
+
+It is instructive to compare our approach with that of Amtoft and
+Banerjee~\cite{tricky}.  Their approach is built around the axiomatic
+semantics for a special logical construct $\Join$ stipulating {\em
+agreement assertions}: for a variable $x$, two states $p$ and $q$
+satisfy $x\Join$ if and only if $x(p)=x(q)$.  They develop axiomatic
+semantics for specifying invariants for loop flow and object flow
+using $\Join$, and a VCG for the semantics.  In contrast, we generate
+and discharge the verification conditions directly through symbolic
+simulation of the operational semantics.  Nevertheless, our approach
+requires no more creative insight than theirs, namely manually
+constructing the loop invariant condition above.  On the other
+hand, our approach can harness the power of a general-purpose theorem
+prover for symbolic simulation and requires no axiomatic semantics for
+information flow.
+
+
+\section{Compositionality}
+\label{sec:compositionality}
+
+The above treatment did not consider compositionality.  Consider
+verifying a program \proc{P} that invokes a subroutine
+\proc{Q}. Symbolic simulation from a cutpoint of \proc{P} might
+encounter an invocation of \proc{Q}, resulting in simulation of
+\proc{Q}.  We prefer to separately verify \proc{Q}, and use the
+result for verifying \proc{P}.
+
+To achieve composition, we must handle the {\em frame conditions}
+necessary to justify that \proc{P} can continue execution after
+\proc{Q} returns.  Note that an information flow specification for
+\proc{Q} is not sufficient to guarantee this; for instance, we must
+show that the execution of \proc{Q} does not corrupt the call stack.
+For functional correctness, the frame problem is addressed by phrasing
+the postcondition as an equality that characterizes how each state
+component is modified by \proc{Q}~\cite{symbolic}.  However, a full
+characterization of each component of \proc{Q} is often irrelevant to
+the information flow of \proc{P}.  The challenge is to effectively
+augment the postcondition of \proc{Q} with frame conditions to
+facilitate symbolic simulation of \proc{P}.
+
+How do we address the challenge?  Let $V$ be the set of state
+components governing the control flow on return from \proc{Q};
+typically $V$ includes the call stack.  Then we define
+$\func{modify}_Q\,(s)$ to update each component of $s$ as follows.
+For each component $v\in V$, $\func{modify}_Q\,(s)$ updates $v$ by
+precisely characterizing its modification on exit from \proc{Q}. The
+update to the call stack is characterized by popping the current call
+frame.  For $c\not\in V$, the update is simply
+$c(\func{nexte}_Q\,(s))$, which may or may not need to be
+characterized depending on the caller.  We then prove the following
+two conditions.
+
+\begin{enumerate}
+\item 
+$\func{poise}_Q\,(s) \wedge \func{exit}_Q\,(\func{run}\,(s,n))
+\Rightarrow\func{nexte}_Q\,(s)=\func{modify}_Q\,(s)$
+\item
+$\func{pre}_Q\,(s,s') \wedge \func{exit}_Q\,(\func{run}\,(s,n))
+  \Rightarrow \\
+\func{post}_Q\,(\func{modify}_Q\,(s),\func{modify}_Q\,(s'))$ 
+\end{enumerate}
+
+\noindent
+Here, $\func{poise}_Q\,(s)$ states that $s$ is poised to invoke
+\proc{Q}. Its definition is derived from $\func{pre}_Q\,(s,s')$ by
+collecting the conjuncts that only mention $s$.  Condition~2 follows
+from 1 and the information flow property of \proc{Q}.  We prove 1
+through inductive assertions, viewing $\func{modify}_Q$ as a functional
+characterization of \proc{Q}~\cite{symbolic}.  The necessary
+assertions can be culled from the information flow proof of \proc{Q}.
+Recall that the predicate $\func{assert}_Q\,(s,s')$ is strong enough to
+characterize the flow of control from each cutpoint of $s$ (and $s'$)
+to the next. Thus, the conjuncts in $\func{assert}_Q\,(s,s')$ that only
+involve $s$ can be used for symbolic simulation from each cutpoint in
+$s$ to prove 1.  The theorems facilitate compositional reasoning.  If
+states $s$ and $s'$ encountered during symbolic simulation of \proc{P}
+are poised to execute \proc{Q}, then 1 permits simulation to ``skip
+past'' \proc{Q}, and 2 enables us to assume \func{post} on the
+generated pair $(\func{modify}_Q\,(s), \func{modify}_Q\,(s'))$ during subsequent
+simulation.  Note that this can be automated using macros as hinted at
+in Section \ref{sec:basic-framework} for the basic framework.
+
+We used the approach above to compositionally verify the program
+shown in Fig.~\ref{fig:main}.
+\begin{figure}
+\begin{center}
+\fbox{
+\begin{minipage}{3.0in}
+\input{mainprog}
+\end{minipage}
+}
+\end{center}
+\caption{A Program to demonstrate compositionality}
+\label{fig:main}
+\end{figure}
+The program is artificial but illustrative.  It invokes one of two
+separate versions of the {\tt tricky} procedure depending on {\tt
+flag}: {\tt tricky1} is as shown in Fig.~\ref{fig:tricky}; {\tt
+tricky3} iterates {\tt 3n} times instead of {\tt n}.  Our information
+flow specification is that the final value of {\tt out} on \func{exit}
+from {\tt main} is independent of {\tt high}.  Note that the
+information flow analysis of {\tt tricky3} is exactly analogous to
+{\tt tricky1}, but its return value is different.  Thus, a complete
+functional characterization of the two routines would involve separate
+analysis.  However, the actual return value of the subroutines is
+immaterial to the information flow of {\tt main}.  With our approach,
+{\tt main} can be verified using only the noninterference of each
+subroutine and the frame conditions.
+
+
+\section{Related Work and Conclusion}
+\label{sec:related}
+
+Information flow analysis was formulated by Denning and
+Denning~\cite{denning}.  Sabelfeld and Meyers~\cite{sm} contains a
+comprehensive survey of the area.  Traditional approaches to
+information flow analysis involves {\em security type
+systems}~\cite{palsberg,volpano}: program variables and expressions
+are annotated with security levels, and flow of information is controlled
+by typing rules.  There has also been significant recent work on
+axiomatic semantics for information flow.  Clark {\em et
+al.}~\cite{clark} develop a semantics for Idealized Algol.  Joshi and
+Leino~\cite{joshi} develop a weakest precondition calculus for
+information flow.  Darvas {\em et al.}~\cite{darvas} use dynamic logic
+to express information flow for Javacard.
+
+Our work provides the first framework for information flow analysis
+through inductive assertions directly on operational semantics.  No
+separate VCG or axiomatic semantics for information flow is necessary.
+Instead, the generation and discharge of verification conditions are
+handled by the theorem prover through symbolic simulation.
+Furthermore, we can compose information flow properties of subroutines
+without requiring full characterization of their functional
+specification.  The framework is in an early stage of development.
+As mentioned in Section~\ref{sec:basic-framework}, we are developing
+proof templates to facilitate the automation of information flow
+verification.  Some planned future enhancements include (1)~automated
+static analysis of data structure shapes, (2)~extension to
+multithreaded programs, and (3)~analysis of dynamic and
+declassification policies.
+
+\vspace*{2mm}
+
+\subsubsection*{Acknowledgements}
+This material is based upon work supported by DARPA and the National
+Science Foundation under Grant No.~CNS-0429591. Matt Kaufmann provided
+numerous comments and suggestions in course of this work.
+
+\bibliographystyle{IEEEtran} 
+\bibliography{information-flow}
+\end{document}
+
+
+---------------------------------------------
+
+Paper: 43
+Title: Mechanized Information Flow Analysis through Inductive Assertions
+
+
+-------------------- review 1 --------------------
+
+PAPER: 43
+TITLE: Mechanized Information Flow Analysis through Inductive Assertions
+ 
+OVERALL RATING: 1 (weak accept)   
+----------------------- REVIEW --------------------
+
+This paper presents an approach to information flow analysis (as
+in security) in ACL2.  The authors' "inductive assertions"
+method appears very standard:  annotate the with inductive
+assertions, and then discharge Hoare-style verification conditions
+automatically between the inductive assertions.  In practice,
+coming up with the inductive assertions is always the problem,
+but for a high-value target like security, such an expensive
+approach may be warranted.
+
+This is solid work, and the paper is very well-written.
+And it is apparently much better than the approach proposed
+by Amtoft and Banerjee that the authors cite.  However, it
+doesn't seem particularly novel:  annotating a program with
+inductive assertions and using a theorem-prover to discharge
+the resulting verification conditions has been standard for
+30 years.  The paper notes "A key feature of our approach is
+that it obviates the need for implementing a custom verification
+condition generator (VCG)," but the proposed method is a
+customized VCG.  It's just a clean way to implement one. 
+
+
+-------------------- review 2 --------------------
+
+PAPER: 43
+TITLE: Mechanized Information Flow Analysis through Inductive Assertions
+ 
+OVERALL RATING: -2 (reject)   
+----------------------- REVIEW --------------------
+
+This paper shows how to use inductive assertions and a mechanized theorem prover to establish information-flow properties (such as non-interference) of software programs.
+
+The work is an extension of [2].
+
+It is not clear to me how much is new in this paper as opposed to [2], other than the application area. Applying safety property verification methods to non-interference has been done before, even in the context of automated theorem proving, see for example:
+
+"A Theorem Proving Approach to Analysis of Secure Information Flow" by Adam Darvas, Reiner Hahnle, David Sands, WITS'03.
+
+It is not clear to me what exactly is manual and what is automatic in the method. The loop invariant has to be asserted manually, what is automatic?
+
+About the compositionality: One big advantage with a type-system approach is that it is (by definition) compositional, and therefore predictable. You claim that your method is compositional, but it is not really. For example, if I lifted out the body of the for-loop in Fig. 3 and put it in a procedure, and used the procedure instead in the for-loop, you would have to do functional reasoning about that procedure in order to get the same result.
+
+How does your method deal with information leakage through non-termination? 
+
+
+-------------------- review 3 --------------------
+
+PAPER: 43
+TITLE: Mechanized Information Flow Analysis through Inductive Assertions
+ 
+OVERALL RATING: 1 (weak accept)   
+----------------------- REVIEW --------------------
+
+The paper presents a tool for checking information flow properties
+through theorem-prover ACL2. As opposed to checking Hoare triples of
+programs, the formulation of the information flow given in the paper
+requires checking assertions over pairs of states. Hence, conventional
+verification condition generation tools like ESC/JAVA can't be used
+directly for this purpose. The paper presents a VC generator for
+programs annotated with information flow assertions at procecdure and
+loop boundaries. 
+
+The basic idea is to define a set of predicates over pairs of states
+(a) assert(s,s') that is a set of assertions over s, s', (b) C(s,s')
+that denote if two states are in "corresponding" cutpoints, (c)
+pre(s,s') and post(s,s') for the pre and post relating the information
+flow property. The VCG guarantees that two states s, s' at cutpoints
+satisfying C(s,s') and satsify the assertion assert(s,s') and they
+both transition to another pair of corresponding cutpoints whose
+assertions are satisfied. Moreover, for corresponding cutpoints
+corresponding to exit locations, the assertions satisfy the post
+conditions. 
+
+Strengths and weaknesses:
+
++ The paper describes a new technique for checking information flow
+properties with a theorem prover. The approach has the promise of
+being more semantic and precise compared to type checkers. 
+
++ A simple but illustrative example has been worked that demonstrates
+the need for expressive assertions to prove the information flow
+property along with necessary assertions. 
+
+- The approach requires the user to annotate every pair of cutpoint in
+  the program with assertions that makes it much more complex compared
+  to checking Hoare triples or functional correctness. The author does
+  not shed any light in this direction. Moreover, the user might
+  sometime need to intervene with the theorem prover to prove complex
+  conjectures. 
+
+- The paper does not show any example of how C(s,s') might look
+  like in general. It is trivial for the example in Fig 3 since two
+  corresponding cutpoints have the same pc. 
+
+- No implementation has been done at this stage. 
+
+- The description of the compositionality in Section IV is very hard
+  to follow, especially how to use postconditions (apart from the
+  modifies clauses) of a called  procedure. It is unclear to me why we
+  have to ensure that the call stack is not corrupted on return from a
+  procedure. 
+
+
+
+Question:
+
+1. Given an annotated progaram with information flow assertions at
+   cutpoints, what is the complexity of the resulting VC formula? Can
+   its size be limited by some polynomial bound over the input program
+   like the VC generation using weakest precondition calculus?
+
+
+2. What is the specification (e.g. modify_Q) of the two procedures
+   tricky1 and tricky3 in the example of Fig 4? 
+
+
+-------------------- review 4 --------------------
+
+PAPER: 43
+TITLE: Mechanized Information Flow Analysis through Inductive Assertions
+ 
+OVERALL RATING: 1 (weak accept)   
+----------------------- REVIEW --------------------
+
+The score reflects the combination of three reviews, two of which are in favor of the paper's inclusion and one mildly in favor of its rejection.  Overall, these reviewers thought this was promising work, and we all found some detail to be lacking (yes, I know it's only a a short paper).  If the authors provided their implementation on-line, some uncertainties could have been shored up.  Additional shortcomings include
+
+  * A lack of detailed comparisons with related work in non-interference analysis, particularly using a theorem-prover;
+  * A mis-directed emphasis on obviating the need for a VCG.  That is not what these reviewers found to be novel.
+  * Being unconvinced about the compositionality of the technique.
+  * These reviewers would like to see more emphasis on inductive assertions for information flow properties.  
+
+Strengths include:
+  * Being well-written.
+  * Being highly-relevant to FMCAD.
+  * Tackling an interesting problem using seemingly novel techniques, and actually implementing the framework.
+
+Overall, I am assigning the paper a "weak accept."
+
+
+**PC member's review**
+
+This work appears to be very much derived from reference [2].  (As an aside, I find it slightly strange to see the sentence "The method is inspired by, and an extension of, our previous work [2] which showed how to prove functional correctness via symbolic simulation."  The only intersection of authors is that the 3rd author (out of four) of the present paper is the 3rd author (out of four) of the cited paper.)  I am somewhat familiar with [2].  One could argue that the only research contribution of this paper is to demonstrate that the "state-based VCG" technique presented in [2] to prove functional correctness can also be used to prove non-interference properties.  That is not an extraordinary result; it is somewhat obvious.  However, it is nice to see that it works in practice, in ACL2, at least for a very small contrived example.
+
+The authors themselves note that the framework is in the early stages of development, and this is a short paper.  If this paper were a full paper, I could imagine it being taken in two directions. (1) Spend more time comparing the framework here with other approaches (e.g., axiomatic) to prove noninterference, so the reader has a good sense of what is the best approach, in a theorem-prover.  (2) The other direction would be to extend the kinds of use-cases and framework, and focus on how the approach works in practice on larger programs.
+
+I would have liked to have seen more comparisons with recent information flow approaches.  For example, in "Verified Safety and Information Flow of a Block Device" by Paul Graunke in Systems Software Verification (SSV 08), a monadic approach is used to prove noninterference in a theorem-prover (it was done in Isabelle, and the system was specified monadically).  In general, I was surprised about the lack of related work cited for verifying noninterference in mechanical theorem-provers.
+
+Also, I'm not so interested in the emphasis (over and over) about there being no VCG.  I feel like the community already knows that there many ways to obviate the need for a VCG or how to build one systematically.  This is an unfounded opinion, but the focus on obviating the VCG almost makes the paper sound dated.
+
+I'm on the fence.  The paper is well-written, in my opinion, the result is clear, and the example nicely demonstrates the approach.  I would encourage the authors to strengthen this paper and to submit it later.  It will make a greater impact if strengthened, but publishing this paper could reduce the chances of a longer paper being accepted.
+
+
+**Sub-reviewer #1**
+Summary: 
+
+This paper describes an approach for verifying information flow
+properties in software systems. A program is annotated with assertions at
+appropriate "cut points" describing restrictions on information flow. This
+collection of annotations along with an operational semantics are then used to
+verify flow properties using ACL2. The authors claim that their verification
+steps are compositional, requiring that each subroutine be analyzed once rather
+than at each call site. This is a work in progress with the implementation in
+ACL2 ongoing.
+
+The operational semantics used to specify program behavior is a routine
+application of state-based semantics, seemingly axiomatic. As an example of
+verification conditions, noninterference is defined. Cut points appear to be
+identified as loop conditions and subprogram entry and exit points and define
+where annotations must be added. (Thus I think supporting the argument for
+compositionality.) The authors define nextc as a mechanism for finding the next
+cut point with respect to a given cut point and define verification conditions
+for information flow. The approach seems like a quite straightforward
+application of axiomatic semantics. If not, I would like to know more details
+concerning why.
+
+For compositionality, the authors discuss the use of frame conditions that
+describe specific conditions that must be preserved across a subroutine call.
+They provide a reasonable description of how frame conditions are defined and a
+simple example. Again, using axiomatic semantics in this manner is well
+established. How does this extend what has already been done?
+
+Evaluation:
+
+The authors say themselves that the approach "appears extremely simple". I
+definitely agree, but simple is not a bad thing. Quite the contrary! Having said
+that, I would like to see evidence of the approach being applied to programs
+longer than a 15-line C program. Particularly with respect to composability
+arguments. It's also not completely clear to me if this can address concurrent
+programs where access control presents much more difficult problems. In their
+defense, the authors do clearly state that this is a work in progress.
+Definitely worth hearing more about at the conference.
+
+Could you say more about what you mean by, "The property cannot be inferred by traditional type reasoning."?
+
+Points in Favor:
++ Well written and reasonably easy to follow.
++ Describes an approach suitable for automation and shows promise for scaling up
+  to large systems.
++ Composability is always a good result and useful to hear about.
+
+Points Against:
+- In section III, the authors argue the approach is scalable with no
+  evaluation to support the claim.  Lots of things look scalable that
+  are not.
+- Annotating cut points in large programs is time consuming and may prove
+  difficult. Do you have a way around this?
+- Defining a full operational semantics for most software systems will
+  definitely prove difficult and result in enormous mathematical theories. Do
+  you have an approach for this?
+
+Typo:
+
+"information flow control;" --> "information flow control,"
+
+
+**Sub-reviewer #2**
+The paper describes a method for proving noninterference properties of
+programs, using Hoare-style annotations at cutpoints where the pre
+(and post) conditions are relations over pairs of start (and end)
+states.
+
+In common with previous work by the authors, the symbolic simulation
+technique obviates the need for implementing a custom verification
+condition generator. However, the more significant contribution of the
+paper is the relation form of pre and postconditions, which: (i)
+supports compositional reasoning over programs; (ii) allow conditional
+noninterference properties to be expressed; and (iii) require no new
+logical constructs (e.g., Amtoft and Banerjee's bowtie connective). If
+novel, this by itself is worthy of publication, and the fact that the
+analysis is mechanized in a well known theorem prover makes this a
+solid piece of work. 
+
+@
+
+
+1.3
+log
+@a few more minor edits, hopefully the last
+@
+text
+@d189 1
+a189 1
+differ from above.  For instance, one might have a lattice of security
+d424 1
+a424 1
+\proc{Q}.  We often prefer to separately verify \proc{Q}, and use the
+d464 1
+a464 1
+\proc{Q}, Its definition is derived from $\func{pre}_Q\,(s,s')$ by
+@
+
+
+1.2
+log
+@Added reviewer comments after \end{document}
+@
+text
+@d264 1
+a264 1
+5. & \func{C}\,(s')\wedge\func{assert}\,(s,s') \wedge\neg\func{exit}\,(s) \wedge\func{exit}\,(\func{run}\,(s,n)) \\
+d292 2
+a293 2
+$\func{C}\,(s,s')$ reduces to the condition that the pc values for $s$
+and $s'$ are equal.
+d368 1
+a368 1
+value of {\tt out} depends only of the value of {\tt low} and {\tt n}.
+d382 1
+a382 1
+The property cannot be inferred by security type reasoning which would
+d443 8
+a450 7
+$\func{modify}_Q\,(s)$ to update each component of $s$ as follows.  For
+each component $v\in V$, $\func{modify}_Q\,(s)$ updates $v$ by precisely
+characterizing its modification on exit from \proc{Q}. The update to
+the call stack is characterized by popping the current call frame.
+For any other component $c$, the update is simply $c(\func{nexte}_Q\,(s))$,
+which may or may not need to be characterized depending on the caller.
+We then prove the following two conditions.
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d551 246
+@

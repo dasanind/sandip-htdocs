@@ -1,0 +1,62 @@
+<html>
+<head>
+  <title>Efficient Execution in an Automated Reasoning Environment</title>
+</head>
+<body TEXT="#000000" 
+      BGCOLOR="FFFFFF"
+      LINK ="#FF0000"
+      VLINK="#A020F0" 
+      ALINK="#FFD700"
+      fixed>
+
+<H1>Efficient Execution in an Automated Reasoning Environment</H1>
+
+
+<big><a href="http://thegreves.com/david">D. A. Greve</a>, <a
+href="http://www.cs.utexas.edu/~kaufmann">M. Kaufmann</a>, <a
+href="http://www.cc.gatech.edu/~manolios">P. Manolios</a>, <a
+href="http://www.cs.utexas.edu/~moore">J S. Moore</a>, <a
+href="http://www.cs.utexas.edu/~sandip">S. Ray</a>, <a
+href="http://www.cs.us.es/~jruiz">J. L. Ruiz-Reina</a>, R. Sumners, <a
+href="http://www.cc.gatech.edu/~vroon">D. Vroon</a>, and <a
+href="http://www.hokiepokie.org">M. Wilding</a> </big>
+
+<br><br>
+
+Technical Report TR-06-59, Department of Computer Sciences, University
+of Texas at Austin, November 2006.
+
+<br>
+<br>
+
+<hr style="width: 100%; height: 2px;">
+
+<H2>Abstract</H2>
+
+We describe a method to permit the user of a mathematical logic to write
+elegant logical definitions while allowing sound and efficient execution.  We
+focus on the ACL2 logic and automated reasoning environment.  ACL2 is used by
+industrial researchers to describe microprocessor designs and other complicated
+digital systems.  Properties of the designs can be formally established with
+the theorem prover.  But because ACL2 is also a functional programming
+language, the formal models can be executed as simulation engines. We implement
+features that afford these dual applications, namely formal proof and execution
+on industrial test suites.  In particular, the features allow the user to
+install, in a logically sound way, alternative executable counterparts for
+logically-defined functions.  These alternatives are often much more efficient
+than the logically equivalent terms they replace.  We discuss several
+applications of these features.
+
+<H2>Relevant files</H2>
+
+<ul>
+  <li>Paper (<a href="defexec.ps">ps</a>, <a
+ href="defexec.pdf">pdf</a>)</li>
+
+ <li><span style="font-weight:bold">Supporting materials:</span> See the directory
+ <code>books/defexec/</code> in the current ACL2 distribution.  
+
+</ul>
+ 
+</body> 
+</html>
